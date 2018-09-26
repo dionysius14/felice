@@ -1,0 +1,160 @@
+body{
+    margin-top: 4%;
+}
+.judulbayar{
+	font-size:24px;
+	font-weight: bold;
+	text-align:left;
+	padding-left: 20px;
+}
+
+
+.judulnomor{
+	font-size:42px;
+	font-weight: bold;
+	text-align:left;
+	
+}
+.enterbottom{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.left{
+	text-align:left;
+}
+.padleft{
+padding-left:10px;
+}
+.enter{
+	padding-top:10px;
+}
+
+.enterenter{
+	margin-top:10px;
+}
+.total{
+	font-size:42px;
+	font-weight: bold;
+	text-align:right;
+	padding-right:20px;
+}
+
+.kata{
+	font-size:42px;
+	font-weight: bold;
+	text-align:left;
+	padding-left:20px;
+}
+
+.totalbayar{
+	font-size:42px;
+	font-weight: bold;
+	text-align:right;
+	padding-right:20px;
+}
+
+
+.judul{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.sub_judul{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.date{
+    font-size:20px;
+    font-weight:bold;
+    color: #0066cc;
+}
+
+.jam{
+    font-size:20px;
+    font-weight:bold;
+    color: #006699;
+}
+
+.right{
+    text-align: right;
+}
+
+.loading_gif {
+    background-color:white;
+    width:100%; 
+    height:100%; 
+    bottom:0px;
+    overflow:hidden; 
+    position:fixed;
+    z-index:999998; 
+    text-align:center; 
+    padding-top:400px; 
+    -moz-opacity: 0.8; 
+    opacity: 0.9;
+}
+
+.loading_gear_gif {
+    background-color:white;
+    width:100%; 
+    height:100%; 
+    bottom:0px;
+    overflow:hidden; 
+    position:fixed;
+    z-index:999999; 
+    text-align:center; 
+    padding-top:400px; 
+    -moz-opacity: 0.8; 
+    opacity: 0.9;
+}
+
+.warning p{
+    color:red;
+    font-style:italic;
+    font-size:11px;
+}
+
+input{
+    margin-bottom:10px;
+}
+
+.action{
+    width: 8.33333%;
+    border-left:1px solid #DDD;
+}
+
+.nama, .role{
+    width: 41.6667%;
+    border-right:1px solid #DDD;
+}
+
+.keterangan{
+    width: 50%;
+    border-left:1px solid #DDD;
+}
+
+.username{
+    width: 50%;
+    border-right:1px solid #DDD;
+}
+
+.borderkanan{
+    border-right:1px solid #DDD;
+}
+
+.borderkiri
+{
+    border-left:1px solid #DDD;
+}
+.NamaMenu{
+    width: 15%;
+    border-left:1px solid #DDD;
+}
+
+input:read-only { 
+    background-color:grey;
+}
+
+/* input:-moz-read-only { 
+    background-color:grey;
+} */
