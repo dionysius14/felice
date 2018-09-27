@@ -63,10 +63,10 @@
 						}?>
 					</ul>
                 </li>
-               	<li><a href="#">How To Order</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Article / News</a></li>
-                <li><a href="#">Testimonial</a></li>
+               	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
+                <li><a href="<?php echo site_url('faqp/index');?>">FAQ</a></li>
+                <li><a href="<?php echo site_url('newsp/index');?>">Article / News</a></li>
+                <li><a href="<?php echo site_url('testimonialp/index');?>">Testimonial</a></li>
                 <li><a href="<?php echo site_url('kontak/index');?>">Contact Us</a></li>
 				<li><a href="<?php echo site_url('about/index');?>">About Us</a></li>
             </ul>

@@ -69,11 +69,11 @@
 							<li><a href="<?php echo site_url('kategori/produk/index/20');?>">Undangan</a></li>
 					</ul>
                 </li>
-               	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
-                <li><a href="<?php echo site_url('faqp/index');?>">FAQ</a></li>
+               	<li><a href="<?php echo site_url('howtop/index');?>" class="selected">How To Order</a></li>
+                <li><a href="<?php echo site_url('faqp/index');?>" >FAQ</a></li>
                 <li><a href="<?php echo site_url('newsp/index');?>">Article / News</a></li>
                 <li><a href="<?php echo site_url('testimonialp/index');?>">Testimonial</a></li>
-                <li><a href="<?php echo site_url('kontak/index');?>" class="selected">Contact Us</a></li>
+                <li><a href="<?php echo site_url('kontak/index');?>" >Contact Us</a></li>
 				<li><a href="<?php echo site_url('about/index');?>">About Us</a></li>
             </ul>
 			   <?php $this->load->view('common/footer_link'); ?>
@@ -96,113 +96,10 @@
                     </div>
                 </div> 
 				<div class="row">
-					<div class="col-lg-11">
-							<div class="row">
-							<div style="margin-left:32px" class="col-md-5">
-								<h3>
-									<b>Felice Florist Souvenir</b>
-								</h3>
-								<table>
-									<tr>
-										<td class="col-lg-2">
-										Alamat	
-										</td>
-										<td>
-											: Jalan Brigjend. Katamso No 69 Purwokerto
-										</td>
-									</tr>
-									<tr>
-										<td class="col-lg-2">
-										Telepon  
-										</td>
-										<td>
-											: 081328156789 | 081327109696
-										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/bbm.png" class="media" alt=""/>
-										</td>
-										<td>
-											   &nbsp; 5197BE75 | 216E2FF2	
-										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/fb.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; -	
-										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; -	
-										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img  style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/instagram.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; -
-										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/youtube.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; -	
-										</td>
-									</tr>
-								</table>
-							</div>
-							<div style="padding-top:20px;margin-left:32px" class="col-md-6 col-xs-10">
-							<?php echo form_open('kontak/post'); ?>
-									<div class="form-group">
-										<label for="name">
-											Nama</label>
-										<input type="text" class="form-control" id="name" name="name" placeholder="Enter nama" required="required" />
-									</div>
-									<div class="form-group">
-										<label for="phone">
-											Telepon</label>
-										<div class="input-group">
-											<span class="input-group-addon">
-											<span class="glyphicon glyphicon-earphone"></span>
-											</span>
-											<input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter telepon" required="required" /></div>
-									</div>
-									<div class="form-group">
-										<label for="email">
-											Email</label>
-										<div class="input-group">
-											<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-											</span>
-											<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required="required" /></div>
-									</div>
-									<div class="form-group">
-										<label for="name">
-											Message</label>
-										<textarea name="message" id="message" name="message" class="form-control" rows="4" cols="25" required="required"
-											placeholder="Message"></textarea>
-									</div>
-								</div>
-								</div>
-								<div class="row">
-								<div style="margin-left:32px" class="col-md-5">
-									
-								</div>
-								<div style="margin-left:32px" class="col-md-6 col-xs-10">
-									<button type="submit" class="btn btn-felice pull-right" id="btnContactUs">
-										Send Message</button>
-										<?php echo form_close();?>	
-								</div>
-								</div>
+					<div style="margin-left:32px" class="col-md-5">
+						<div class="row">
+						<b>howto</b>
+						</div>
 					</div>
                 </div>
                 </div>
