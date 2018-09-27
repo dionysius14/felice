@@ -73,6 +73,9 @@
 							<li><a href="<?php echo site_url('kategori/produk/index/20');?>">Undangan</a></li>
 					</ul>
                 </li>
+                <li><a href="#">How To Order</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Article / News</a></li>
                 <li><a href="<?php echo site_url('kontak/index');?>">Contact Us</a></li>
 				<li><a href="<?php echo site_url('about/index');?>" class="selected">About Us</a></li>
             </ul>
