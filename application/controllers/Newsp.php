@@ -2,19 +2,20 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Testimonialp extends CI_Controller {
+class Newsp extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        // Model template
-		$this->load->model('testimonial_model');
+        // Model template 
+        $this->load->model('news_model');
+        $this->load->model('data_profile');
         $this->load->library('pagination');
         // Place your model here...
     }
-	
+
     public function index() {
-		$config['base_url'] = site_url('testimonialp/index/');
-        $rows = $this->db->query('SELECT * FROM testimonial ORDER BY testimonial_id DESC')->result();
+		$config['base_url'] = site_url('newsp/index/');
+        $rows = $this->db->query('SELECT * FROM data_news ORDER BY news_date DESC')->result();
         $config['total_rows'] = count($rows);
         $config['per_page'] = 5;
         $config['use_page_numbers'] = FALSE;
@@ -34,16 +35,22 @@ class Testimonialp extends CI_Controller {
         $config['last_tag_open'] = '<li>';
         $config['last_tag_close'] = '</li>';
         $this->pagination->initialize($config);
-        $this->session->set_userdata("last_url", "testimonial");
+        $this->session->set_userdata("last_url", "news");
         if (is_numeric($this->uri->segment(3)) && $this->uri->segment(3) != '') {
             $page = ($this->uri->segment(3));
         } else {
             $page = 0;
         }
-        $data['testimonial'] = $this->db->query('SELECT * FROM testimonial '
-                        . ' ORDER BY testimonial_id DESC LIMIT ' . $page . ',' . $config['per_page'])->result();
-						
-        $this->load->view('testimonialp_view',$data);
+        $data['news'] = $this->db->query('SELECT * FROM data_news '
+                        . ' ORDER BY news_date DESC LIMIT ' . $page . ',' . $config['per_page'])->result();
+					
+        $this->load->view('newsp_view', $data);
     }
 
+    public function show() {
+        $this->lib->check_session();
+        redirect('newsp');
+    }
+
+   
 }

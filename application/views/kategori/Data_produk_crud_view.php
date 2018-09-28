@@ -9,14 +9,14 @@
         <div class="col-md-3  padding_top">Kategori</div>
             <div class="col-md-9"> 
                 <?php
-                $query = "SELECT * FROM kategori where is_delete=0 ORDER BY kategori_id asc ";
-                $result = mysql_query($query);
+				
+                $query = $this->db->query('SELECT * FROM kategori where is_delete=0 ORDER BY kategori_id asc')->result_array();
                 ?>
                 <select  class="form-control margin_bottom" id="kategori_id" name="kategori_id">
                     <?php
                     echo "<option value='0'>Silahkan Pilih</option>";
-                    while ($row = mysql_fetch_array($result)) {
-                        echo "<option value=" . $row['kategori_id'] . ">" . $row['kategori_nama'] . "</option>";
+                    foreach ($query as $arr) {
+                        echo "<option value=" . $arr['kategori_id'] . ">" . $arr['kategori_nama'] . "</option>";
                     }
                     ?>        
                 </select>
@@ -36,13 +36,6 @@
                 <textarea class="form-control margin_bottom" id="produk_deskripsi" name="produk_deskripsi" type="text" size="28"  value="<?php echo set_value('produk_deskripsi', ''); ?>"></textarea><span class="warning"><?php echo form_error('produk_deskripsi'); ?> </span>
             </div> 
         </div>
-		<!--<div class="row">
-            <div class="col-md-3 padding_top">Keterangan</div>
-            <div class="col-md-9"> 
-                <textarea class="form-control margin_bottom" id="produk_ket" name="produk_ket" type="text" size="28"  value="<?php echo set_value('produk_ket', ''); ?>"> </textarea>
-                <span class="warning"><?php echo form_error('produk_ket'); ?> </span>
-            </div> 
-        </div>-->
 		<div class="row">
             <div class="col-md-3 padding_top">Foto</div>
             <div class="col-md-9"> 

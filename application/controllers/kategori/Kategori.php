@@ -27,7 +27,7 @@ class kategori extends CI_Controller {
 
     public function show() {
         $this->lib->check_session();
-        redirect('kategori/kategori/');
+        redirect('kategori/kategori');
     }
 
     public function kategori_show_by_id() { //kirim data buat form edit	
@@ -100,7 +100,7 @@ class kategori extends CI_Controller {
                 $temp = $this->kategori_model->insert($dataData);
                 if ($temp == '1') {
                     $this->session->set_userdata("error", "Simpan Berhasil");
-                    redirect('kategori/kategori/');
+                    redirect('kategori/kategori');
                 } else
                     echo "insert Gagal";
             }
@@ -121,7 +121,7 @@ class kategori extends CI_Controller {
 
                     if ($temp == '1') {
                         $this->session->set_userdata("error", "Edit Berhasil");
-                        redirect('kategori/kategori/');
+                        redirect('kategori/kategori');
                     } else {
                         $data['ubah'] = 'ubah';
                         $data['error'] = 'error';

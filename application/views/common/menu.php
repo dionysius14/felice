@@ -31,10 +31,10 @@ $akses = $this->script_sql->get_data_row($table, $join, $where, $order_by, $grou
                     </a>
                     <ul class="dropdown-menu">
 						<li class=""><a  class="menu" href="<?php echo site_url("data_about/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;Data Link Social Media</a></li>
-						<li class=""><a  class="menu" href="<?php echo site_url("faq/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;FAQ</a></li>
-						<li class=""><a  class="menu" href="<?php echo site_url("howto/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;How to Order</a></li>
-						<li class=""><a  class="menu" href="<?php echo site_url("testimonial/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;Testimonial</a></li>
-						<li class=""><a  class="menu" href="<?php echo site_url("new/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;News</a></li>
+						<li class=""><a  class="menu" href="<?php echo site_url("faq/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;FAQ</a></li>
+						<li class=""><a  class="menu" href="<?php echo site_url("howto/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;How to Order</a></li>
+						<li class=""><a  class="menu" href="<?php echo site_url("testimonial/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;Testimonial</a></li>
+						<li class=""><a  class="menu" href="<?php echo site_url("news/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;News</a></li>
 				  
 						
 					</ul>

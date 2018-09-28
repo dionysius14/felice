@@ -70,6 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             var arr = JSON.parse(result);
                                     $('#testimonial_nama').val(arr[0].testimonial_nama);
                                     $('#testimonial_ket').val(arr[0].testimonial_ket);
+										$('#prev').attr("src",arr[0].testimonial_foto);
                                     $('#datamodel').val(arr[0].datamodel);
                                     $('#button').attr("name", "ubah");
                                     $('#button').attr("value", "Ubah");
@@ -192,6 +193,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-12">
                                 <table ng-table="tableParams"  class="table table-striped ng-table-responsive" export-csv="csv">
                                     <tr ng-repeat="(datamodel, testimonial) in $data | filter:testimonial.user_name as results" ng-class="{ 'emphasis': testimonial.role_nama == '<?php echo $this->session->userdata("role_nama") ?>'}">
+										<td align="center" class="col-md-2 borderkanan" data-title="'Foto'" sortable="'testimonial_foto'">
+											<img width="50%" src="<?php echo base_url(); ?>/include_front/img/testimonial/{{testimonial.testimonial_foto}}" />
+                                        </td> 
                                         <td class="testimonial" data-title="'Nama'" sortable="'testimonial_nama'">
                                             <span id="user_name_{{$index}}" >{{testimonial.testimonial_nama}}</span>
                                         </td> 

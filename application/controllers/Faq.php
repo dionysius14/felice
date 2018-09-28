@@ -30,7 +30,7 @@ class Faq extends CI_Controller {
 
     public function show() {
         $this->lib->check_session();
-        redirect('faq/');
+        redirect('faq');
     }
 
     public function faq_show_by_id() { //kirim data buat form edit
@@ -98,7 +98,7 @@ class Faq extends CI_Controller {
                 $temp = $this->faq_model->insert($dataData);
                 if ($temp == '1') {
                     $this->session->set_userdata("error", "Simpan Berhasil");
-                    redirect('faq/');
+                    redirect('faq');
                 } else
                     echo "Insert Gagal";
             }
@@ -123,7 +123,7 @@ class Faq extends CI_Controller {
 
                     if ($temp == '1') {
                         $this->session->set_userdata("error", "Edit Berhasil");
-                        redirect('faq/');
+                        redirect('faq');
                     } else {
                         $data['ubah'] = 'ubah';
                         $data['error'] = 'error';

@@ -30,7 +30,7 @@ class Howto extends CI_Controller {
 
     public function show() {
         $this->lib->check_session();
-        redirect('howto/');
+        redirect('howto');
     }
 
     public function howto_show_by_id() { //kirim data buat form edit
@@ -94,7 +94,7 @@ class Howto extends CI_Controller {
                 $temp = $this->howto_model->insert($dataData);
                 if ($temp == '1') {
                     $this->session->set_userdata("error", "Simpan Berhasil");
-                    redirect('howto/');
+                    redirect('howto');
                 } else
                     echo "Insert Gagal";
             }
@@ -118,7 +118,7 @@ class Howto extends CI_Controller {
 
                     if ($temp == '1') {
                         $this->session->set_userdata("error", "Edit Berhasil");
-                        redirect('howto/');
+                        redirect('howto');
                     } else {
                         $data['ubah'] = 'ubah';
                         $data['error'] = 'error';

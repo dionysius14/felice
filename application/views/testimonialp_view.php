@@ -96,9 +96,22 @@
                     </div>
                 </div> 
 				<div class="row">
-					<div style="margin-left:32px" class="col-md-5">
+					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
 						<div class="row">
-						<b>testimonial</b>
+							<?php foreach($testimonial as $ts){?>
+								<div class="news-items well">
+									<div class="item">
+										<div class="news-desc">
+											<img src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>">
+											<h2 ><?php echo $ts->testimonial_nama; ?></h2>
+											<p>
+											 <?php echo $ts->testimonial_ket; ?>
+											</p>
+										</div>
+									</div>
+								</div>
+							<?php } ?>
+							<center><?php echo $this->pagination->create_links(); ?></center>
 						</div>
 					</div>
                 </div>
