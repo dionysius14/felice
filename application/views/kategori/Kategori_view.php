@@ -36,7 +36,7 @@
             <ul class="sidebar-nav">
                 <li style="background:#fff; padding-top:10px;padding-bottom:10px;height:80px" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
-                       <img src="<?php echo base_url(); ?>include_front/img/test.png"/>
+                       <img src="<?php echo base_url(); ?>include_front/img/test.jpg"/>
                     </a>
                 </li>
 				<li>
