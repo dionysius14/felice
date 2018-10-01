@@ -133,13 +133,12 @@
 												<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
 												<?php echo $val->produk_deskripsi; ?>
 												</h4>
-												<?php
-													$this->load->view("common/footer_produk");
-												?>
 											</div>
 										</div>
 									</a>
 								</div>
+								<center><?php echo $val->produk_nama; ?></center>
+								<center><b>Rp 24000</b></center>
 							</div>
 							</div>
 						
