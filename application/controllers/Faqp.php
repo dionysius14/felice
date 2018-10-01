@@ -12,7 +12,8 @@ class Faqp extends CI_Controller {
     }
 	
     public function index() {
-        $this->load->view('faqp_view');
+        $data['faq'] = $this->faq_model->get_all();
+        $this->load->view('faqp_view',$data);
     }
 
 }

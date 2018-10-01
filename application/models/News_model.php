@@ -13,6 +13,13 @@ class News_model extends CI_Model {
 		return $query->result() ;
 	} 
 	
+	function get_newsbyid($id) {
+        $this->db->select();
+        $this->db->from('data_news');
+        $this->db->where('news_id', $id);
+        $query = $this->db->get();
+        return $query->row();
+    }
 	public function get_by_id($news)
 	{
 		$this->db->select();

@@ -123,7 +123,7 @@
 											</p>
 										</div>
 										<div class="viewall">
-											<span><a href="<?php echo site_url("newsdetail?id=".$nw->news_id.""); ?>">View All</a></span>
+											<span><a href="<?php echo site_url("newsdetail?id=".$nw->news_id.""); ?>">Read More</a></span>
 										</div>
 									</div>
 								</div>

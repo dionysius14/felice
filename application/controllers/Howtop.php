@@ -12,7 +12,8 @@ class Howtop extends CI_Controller {
     }
 	
     public function index() {
-        $this->load->view('howtop_view');
+        $data['howto'] = $this->howto_model->get_all();
+        $this->load->view('howtop_view',$data);
     }
 
 }

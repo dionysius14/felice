@@ -70,9 +70,9 @@
 					</ul>
                 </li>
                	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
-                <li><a href="<?php echo site_url('faqp/index');?>" class="selected">FAQ</a></li>
-                <li><a href="<?php echo site_url('newsp/index');?>">Article / News</a></li>
-                <li><a href="<?php echo site_url('testimonialp/index');?>">Testimonial</a></li>
+                <li><a href="<?php echo site_url('faqp/index');?>" >FAQ</a></li>
+                <li><a href="<?php echo site_url('newsp/index');?>" class="selected">Article / News</a></li>
+                <li><a href="<?php echo site_url('testimonialp/index');?>" >Testimonial</a></li>
                 <li><a href="<?php echo site_url('kontak/index');?>" >Contact Us</a></li>
 				<li><a href="<?php echo site_url('about/index');?>">About Us</a></li>
             </ul>
@@ -98,35 +98,22 @@
 				<div class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
 						<div class="row">
-							<h3>
-								<b>Frequent Ask Question</b>
-								</h3>
-								<table class="well">
-										<?php
-									foreach ($faq as $fd) {
-									?>
-									<tr>
-										<td>
-										<b>Pertanyaan</b> 	
-										</td>
-										<td>
-											:<?php echo $fd->faq_ask ?>
-										</td>
-									</tr>
-									<tr>
-										<td>
-										<b>Jawaban</b>  
-										</td>
-										<td>
-											:<?php echo $fd->faq_answer ?>
-										</td>
-									</tr>
-									<br/>
-							<?php
-							}
-							?>
-								</table>
-								
+						<div class="news-items well">
+							<div class="item">
+									<h2><?php echo $newsdetail->news_judul; ?></h2>
+									<div class="date">
+										<span><?php echo date('d M Y',strtotime($newsdetail->news_date)); ?></span>
+									</div>
+									<div class="news-desc">
+										<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
+										<p><?php echo $newsdetail->news_konten; ?>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="viewall">
+								<span><a href="<?php echo site_url("newsp"); ?>">Back</a></span>
+							</div>
 						</div>
 					</div>
                 </div>

@@ -96,9 +96,15 @@
                     </div>
                 </div> 
 				<div class="row">
-					<div style="margin-left:32px" class="col-md-5">
+					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
 						<div class="row">
-						<b>howto</b>
+						<?php
+									foreach ($howto as $ht) {
+									?>
+									<b><?php echo $ht->howto_step ?></b>
+									<?php
+							}
+							?>
 						</div>
 					</div>
                 </div>
