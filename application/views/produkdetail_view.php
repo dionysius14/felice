@@ -8,27 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-<?php 
-					$product="";
-					if(isset($select))
-					{
-						if(!empty($get_all_kategori))
-						{
-							foreach($get_all_kategori as $val)
-							{
-							$true="";
-							if($select==$val->kategori_id)
-							$titel=$val->kategori_nama;
-							}
-						}
-					}						
-					else
-					{
-						$product="class='selected'";
-					}
-					?>
-					
-    <title>Felice Florist Souvenir | Product <?php echo "- ".$titel; ?></title>
+
+    <title>Felice Florist Souvenir | Contact</title>
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/title.png">
 
     <!-- Bootstrap Core CSS -->
@@ -59,39 +40,40 @@
                     </a>
                 </li>
 				<li>
-                    <a href="<?php echo site_url('home/index');?>">
+                    <a href="<?php echo site_url('home/index');?>" class="selected">
                        Home
                     </a>
                 </li>
                 <li>
-                    
-					
-					<a href="#" <?php echo $product; ?> >Produk</a>
+                    <a href="#">Produk</a>
 					 <ul class="submenu" style="overflow:auto;height:350px">
-						<?php
-						if(!empty($get_all_kategori))
-						{
-							foreach($get_all_kategori as $val)
-							{
-							$true="";
-							if($select==$val->kategori_id)
-							$true="class='selected'";
-							
-							?>
-							<li><a href="<?php echo site_url('kategori/produk/index/'.$val->kategori_id.'');?>" <?php echo $true; ?>><?php echo $val->kategori_nama;?></a></li>
-							<?php 
-							}
-						}?> 
-						
-						
+							<li><a href="<?php echo site_url('kategori/produk/index/1');?>">Acrylic</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/2');?>">Bantal</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/3');?>">Gantungan</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/4');?>">Gelas & Mug</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/5');?>" >Handuk</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/6');?>">Kipas</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/7');?>">Paketan</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/8');?>">Plakat</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/9');?>">Pouch</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/10');?>">Tas</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/11');?>">Tempat Cincin</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/12');?>">Tempat Gula</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/13');?>">Tempat Lada</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/14');?>">Tempat Lilin</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/15');?>">Tempat Tisue</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/16');?>">Tempat Pensil</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/17');?>">Teplok</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/18');?>">Toples</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/19');?>">Tumbler</a></li>
+							<li><a href="<?php echo site_url('kategori/produk/index/20');?>">Undangan</a></li>
 					</ul>
-						
                 </li>
                	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
-                <li><a href="<?php echo site_url('faqp/index');?>" >FAQ</a></li>
-                <li><a href="<?php echo site_url('newsp/index');?>" class="selected">Article / News</a></li>
-                <li><a href="<?php echo site_url('testimonialp/index');?>" >Testimonial</a></li>
-                <li><a href="<?php echo site_url('kontak/index');?>" >Contact Us</a></li>
+                <li><a href="<?php echo site_url('faqp/index');?>">FAQ</a></li>
+                <li><a href="<?php echo site_url('newsp/index');?>">Article / News</a></li>
+                <li><a href="<?php echo site_url('testimonialp/index');?>">Testimonial</a></li>
+                <li><a href="<?php echo site_url('kontak/index');?>">Contact Us</a></li>
 				<li><a href="<?php echo site_url('about/index');?>">About Us</a></li>
             </ul>
 			   <?php $this->load->view('common/footer_link'); ?>
@@ -113,40 +95,39 @@
                          <a href="#menu-toggle" class="margin_menu btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div> 
-				
 				<div class="row">
-					<?php
-						if(!empty($get_all))
-						{
-							foreach($get_all as $val)
-							{
-							?>
-							
-							<div class="col-md-3">						
-							<div class="main">
-								<div class="work">
-									<a href="<?php echo site_url("produkdetail?id=".$val->produk_id.""); ?>" >
-										<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
-										<div class="caption">
-											<div class="work_title">
-												<h1><?php echo $val->produk_nama; ?></h1>
-												<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
-												<?php echo $val->produk_deskripsi; ?>
-												</h4>
-											</div>
+					<div class="col-lg-11">
+						<div class="row">
+							<div style="margin-left:32px" class="col-md-5">
+								<h3>
+									<b>Felice Florist Souvenir</b>
+								</h3>
+								 <?php foreach($produk as $val){?>
+								 <div class="col-md-6">						
+									<div class="main">
+										<div class="work">
+												<a href="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto;?>" rel="lightbox[gallery]">
+												<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
+												<div class="caption">
+													<div class="work_title">
+														<h1><?php echo $val->produk_nama; ?></h1>
+														<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
+														<?php echo $val->produk_deskripsi; ?>
+														</h4>
+													</div>
+												</div>
+											</a>
 										</div>
-									</a>
+									</div>
 								</div>
-								<center><?php echo $val->produk_nama; ?></center>
-								<center><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></center><br/>
+								 <?php } ?>
 							</div>
+							<div style="padding-top:20px;margin-left:32px" class="col-md-6 col-xs-10">
+							asdasdasd
 							</div>
-						
-							<?php
-							}
-						}
-						?>
-						
+						</div>
+					</div>
+                </div>
                 </div>
             </div>
         </div>

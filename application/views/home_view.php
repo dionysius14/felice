@@ -163,21 +163,15 @@
 					<div class="slideshow-container">
 
 						<div class="mySlides fade">
-						  <div class="numbertext">1 / 3</div>
 						  <img src="<?php echo base_url(); ?>include_front/img/slider/a.jpg" style="width:100%">
-						  <div class="text">Caption Text</div>
 						</div>
 
 						<div class="mySlides fade">
-						  <div class="numbertext">2 / 3</div>
 						  <img src="<?php echo base_url(); ?>include_front/img/slider/a.jpg" style="width:100%">
-						  <div class="text">Caption Two</div>
 						</div>
 
 						<div class="mySlides fade">
-						  <div class="numbertext">3 / 3</div>
 						  <img src="<?php echo base_url(); ?>include_front/img/slider/a.jpg" style="width:100%">
-						  <div class="text">Caption Three</div>
 						</div>
 
 					</div>
@@ -226,7 +220,7 @@
 						 <div class="col-md-3">						
 							<div class="main">
 								<div class="work">
-									<a href="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto;?>" rel="lightbox[gallery]">
+									<a href="<?php echo site_url("produkdetail?id=".$val->produk_id.""); ?>" >
 										<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
 										<div class="caption">
 											<div class="work_title">
@@ -239,7 +233,7 @@
 									</a>
 								</div>
 								<center><?php echo $val->produk_nama; ?></center>
-								<center><b>Rp 24000</b></center>
+								<center><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></center><br/>
 							</div>
 						</div>
 						 <?php } ?>
