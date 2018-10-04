@@ -102,17 +102,19 @@
 								<h3>
 									<b>Felice Florist Souvenir</b>
 								</h3>
-								 <?php foreach($produk as $val){?>
+								 <?php 
+								 if(count($produkdetail)>0){
+								 foreach($produkdetail as $val){?>
 								 <div class="col-md-6">						
 									<div class="main">
 										<div class="work">
-												<a href="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto;?>" rel="lightbox[gallery]">
-												<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
+												<a href="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto;?>" rel="lightbox[gallery]">
+												<img src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" class="media" alt=""/>
 												<div class="caption">
 													<div class="work_title">
-														<h1><?php echo $val->produk_nama; ?></h1>
+														<h1><?php echo $produk->produk_nama; ?></h1>
 														<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
-														<?php echo $val->produk_deskripsi; ?>
+														<?php echo $produk->produk_deskripsi; ?>
 														</h4>
 													</div>
 												</div>
@@ -120,10 +122,38 @@
 										</div>
 									</div>
 								</div>
-								 <?php } ?>
+								 <?php }}else{
+									 echo "<center>-- Foto Produk tidak ditemukan --</center>";
+								 } ?>
 							</div>
 							<div style="padding-top:20px;margin-left:32px" class="col-md-6 col-xs-10">
-							asdasdasd
+							<table>
+									<tr>
+										<td class="col-lg-2">
+										Produk	
+										</td>
+										<td>
+											<?php echo $produk->produk_nama; ?>
+										</td>
+									</tr>
+									<tr>
+										<td class="col-lg-2">
+										Deskripsi  
+										</td>
+										<td>
+											<?php echo $produk->produk_deskripsi; ?>
+										</td>
+									</tr>
+									<tr>
+										<td class="col-lg-2">
+										Harga  
+										</td>
+										<td>
+											<b>Rp <?php echo number_format($produk->produk_harga, 0, ',', '.'); ?></b>
+										</td>
+									</tr>
+									
+								</table>
 							</div>
 						</div>
 					</div>

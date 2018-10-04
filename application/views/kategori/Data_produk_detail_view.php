@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     _insert = '<?php echo $this->session->userdata('akses_insert');?>';
                     _edit = '<?php echo $this->session->userdata('akses_edit'); ?>';
                     _delete = '<?php echo $this->session->userdata('akses_delete'); ?>';
-                    site_url = '<?php echo site_url(); ?>/kategori/data_produk/';
+                    site_url = '<?php echo site_url(); ?>/kategori/data_produk_detail/';
                     base_url = '<?php echo base_url(); ?>/';
                     window.onload = function() {
 					// alert(_edit);
@@ -59,45 +59,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 			}
 
-            function form_edit(index)
-            {
-				if(_edit!='0'){
-					$('.loading_gear_gif').show();
-					
-						$.ajax({
-						type: "POST",
-								url: "<?php echo site_url('kategori/data_produk/produk_show_by_id') ?>",
-								timeout: 20000,
-								data:
-								'datamodel=' + $(index).attr("datamodel")
-
-								, success: function(result) {
-								// alert(result);
-								if (result != "[]")
-								{
-								var arr = JSON.parse(result);
-										$('#kategori_id').val(arr[0].kategori_id);
-										$('#produk_nama').val(arr[0].produk_nama);
-										$('#produk_deskripsi').val(arr[0].produk_deskripsi);
-										$('#produk_ket').val(arr[0].produk_ket);
-										$('#datamodel').val(arr[0].datamodel);
-										$('#prev').attr("src",arr[0].produk_foto);
-										$('#button').attr("name", "ubah");
-										$('#button').attr("value", "Ubah");
-										$('#form_produk').attr("action", site_url + 'edit');
-										show_remodal();
-								}
-								else
-										alertify.error("Kode Eror [100] : Terjadi kesalahan saat eksekusi permintaan<br/><br/>Status: gagal menerima data dari server");
-										//	$('.loading_gif').hide();
-								}
-
-						});
-				}else{
-					alertify.error("Anda tidak mempunyai akses untuk edit!");
-				}
-            }
-			
 			
             function deleted(index)
             {
@@ -107,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if (e) {
             $.ajax({
             type: "POST",
-                    url: "<?php echo site_url('kategori/data_produk/delete') ?>",
+                    url: "<?php echo site_url('kategori/data_produk_detail/delete') ?>",
                     timeout: 20000,
                     data:
                     'datamodel=' + $(index).attr("datamodel")
@@ -117,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     {
                     alertify.success('Hapus sukses');
                             location.reload();
-                            window.location.replace("<?php echo site_url('kategori/data_produk/'); ?>");
+                            window.location.replace("<?php echo site_url('kategori/data_produk_detail/'); ?>");
                     }
                     else if (result == "2")
                     {
@@ -149,23 +110,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     window.location = site_url;
                     hide_remodal();
             }
-			function go_to_detail(index)	
-			{
-						$.ajax({
-						type: "POST",
-								url: "<?php echo site_url('kategori/data_produk/go_to_detail') ?>",
-								timeout: 20000,
-								data:
-								'datamodel=' + $(index).attr("datamodel")
-
-								, success: function(result) {
-								
-									window.location = '<?php echo site_url("kategori/data_produk_detail") ?>';
-								}
-
-						});
-				
-			}
             function clear_sorting()
             {
             $("#filter_search").val("");
@@ -175,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             var app = angular.module('main', ['ngTable', 'ngTableExport']).
                     controller('DemoCtrl', function($scope, $filter, $http, NgTableParams, $sce) {
                     var data = [];
-                            $http.get('<?php echo site_url('kategori/data_produk/produk_show'); ?>')
+                            $http.get('<?php echo site_url('kategori/data_produk_detail/produk_show'); ?>')
                             .success(function($produk) {
                             data = $produk;
                                     $scope.tableParams = new NgTableParams({
@@ -223,21 +167,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <table ng-table="tableParams"  class="table table-striped ng-table-responsive" export-csv="csv">
                                     <tr ng-repeat="(datamodel, produk) in $data | filter:produk.produk_nama as results" ng-class="{ 'emphasis': produk.produk_nama == '<?php echo $this->session->userdata("produk_nama") ?>'}">
                                          <td align="center" class="col-md-2 borderkanan" data-title="'Foto'" sortable="'produk_foto'">
-											<img width="50%" src="<?php echo base_url(); ?>/include_front/img/produk/{{produk.produk_foto}}" />
-                                        </td> 
-										<td class="col-md-3 borderkanan" data-title="'Kategori'" sortable="'kategori_nama'">
-                                            <span id="kategori_nama{{$index}}" >{{produk.kategori_nama}}</span>
-                                        </td> 
-										<td class="col-md-3 borderkanan" data-title="'Nama Produk'" sortable="'produk_nama'">
-                                            <span id="produk_nama{{$index}}" >{{produk.produk_nama}}</span>
-                                        </td> 
-										 <td class="col-md-3 borderkanan" data-title="'Deskripsi Produk'" sortable="'produk_deskripsi'">
-                                            <span id="produk_deskripsi{{$index}}" >{{produk.produk_deskripsi}}</span>
+											<img width="20%" src="<?php echo base_url(); ?>/include_front/img/produk/detail/{{produk.foto}}" />
                                         </td> 
 										
                                         <td class="action" data-title="'Actions'" >
-                                    <center><a href="" id="produk-{{$index}}" datamodel={{produk.datamodel}} class="btn btn-default btn-xs" onclick="form_edit(this)"><img src="<?php echo base_url(); ?>include/img/edit.png" /></a>   
-									<a href="" id="produk-{{$index}}" datamodel={{produk.datamodel}} class="btn btn-default btn-xs" onclick="go_to_detail(this)"><img src="<?php echo base_url(); ?>include/img/master-data.png" /></a> 
+                                    <center>   
                                         <a href="" id="produk-{{$index}}" datamodel={{produk.datamodel}} class="btn btn-default btn-xs" onclick="deleted(this)"><img src="<?php echo base_url(); ?>include/img/delete.png" /></a>   </center>
                                     </td>
 
@@ -261,7 +195,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-1"></div>
             </div>
         </div>
-        <?php $this->load->view("kategori/data_produk_crud_view"); // remodal  ?>
+        <?php $this->load->view("kategori/data_produk_detail_crud_view"); // remodal  ?>
         <?php $this->load->view('common/footer'); ?>
         <script src="<?php echo base_url(); ?>include/js/bootstrap.min.js"></script> 
     </body>

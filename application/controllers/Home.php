@@ -20,6 +20,7 @@ class home extends CI_Controller {
 		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();	
 		$config['base_url'] = site_url('home/index/');
         $rows = $this->db->query('SELECT * FROM data_produk ORDER BY produk_tgl_input DESC')->result();
+		$data['slider'] = $this->db->query('SELECT * FROM slider ')->result();
         $config['total_rows'] = count($rows);
         $config['per_page'] = 24;
         $config['use_page_numbers'] = FALSE;

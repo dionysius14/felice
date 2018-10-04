@@ -52,7 +52,10 @@ class data_produk extends CI_Controller {
         }
         echo json_encode($array);
     }
-
+	public function go_to_detail() {
+        $this->lib->check_session();
+        $this->session->set_userdata("produk_id", $_POST["datamodel"]);
+    }
     public function produk_show() {
         $this->lib->check_session();
         $index = 0;

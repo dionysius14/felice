@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $attributes = array('class' => 'form-signin');
                 echo form_open('login', $attributes);
                 ?>
-				<center><img style="margin-bottom:20px" width="70%" id="preview_image" src="<?php echo base_url(); ?>include_front/img/test.png">
+				<center><img style="margin-bottom:20px" width="70%" id="preview_image" src="<?php echo base_url(); ?>include_front/img/test.jpg">
 				<br/>
                 <!--h2 class="form-signin-heading">LOGO SI</h2--></center>
                 <label for="inputEmail" class="sr-only">Email address</label>

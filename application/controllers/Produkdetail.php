@@ -28,10 +28,10 @@ class Produkdetail extends CI_Controller {
     public function index() {
         $this->session->set_userdata("last_url", "home");
 		$data['select'] = '1';
-		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();
-$data['produk'] = $this->db->query('SELECT * FROM data_produk ORDER BY produk_tgl_input DESC')->result();		
+		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();		
 		$id = $this->input->get('id');
-        $data['produkdetail'] = $this->produk_model->get_by_id($id);
+		$data['produk'] = $this->db->query('SELECT * FROM data_produk where produk_id = '.$id.'')->row();
+        $data['produkdetail'] = $this->produk_model->get_by_id_detail($id);
         $this->load->view('produkdetail_view', $data);
     }
 

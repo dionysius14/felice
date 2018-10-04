@@ -35,9 +35,25 @@ class produk_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result() ;
 	}
+	public function get_by_id_detail($produk_id)
+	{
+		 $this->db->select();
+        $this->db->from('data_produk_detail');
+        $this->db->where('is_delete', '0');
+        $this->db->where('produk_id', $produk_id);
+		$query = $this->db->get();
+		return $query->result() ;
+	}
 	public function insert($data)
 	{  
 		$temp=$this->db->insert('data_produk', $data); 
+		$this->session->set_userdata("last_id",$this->db->insert_id()); 
+		return $temp;
+		
+	}
+	public function insert_detail($data)
+	{  
+		$temp=$this->db->insert('data_produk_detail', $data); 
 		$this->session->set_userdata("last_id",$this->db->insert_id()); 
 		return $temp;
 		
@@ -59,6 +75,23 @@ class produk_model extends CI_Model {
 		
 	   return $temp;
 	} 
+	public function delete_semu_detail($produk_detail_id)
+	{
+		$data_lama=$this->db->query('select * from data_produk_detail where produk_detail_id="'.$produk_detail_id.'"')->num_rows();
+		
+	   $data = array(
+			'is_delete' => '1',
+		); 
+        $this->db->where('produk_detail_id', $produk_detail_id);
+       $temp= $this->db->update('data_produk_detail', $data); 
+		
+		if($temp==0&&$data_lama>0) //kalau tidak ada perubahan cek data dengan id itu ada g. kalau ada dianggap ada perubahan data
+		$temp=1; 
+		
+		$this->session->set_userdata("last_id",$produk_detail_id);
+		
+	   return $temp;
+	}
 	public function update($produk_id, $data)
 	{
 		$data_lama=$this->db->query('select * from data_produk where produk_id="'.$produk_id.'"')->num_rows();

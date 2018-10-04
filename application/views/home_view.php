@@ -161,26 +161,19 @@
                 </div> 
 				<div class="row">
 					<div class="slideshow-container">
-
+						<?php foreach($slider as $sld){?>
 						<div class="mySlides fade">
-						  <img src="<?php echo base_url(); ?>include_front/img/slider/a.jpg" style="width:100%">
+						  <img src="<?php echo base_url(); ?>include_front/img/slider/<?php echo $sld->foto ?>" style="width:100%">
 						</div>
-
-						<div class="mySlides fade">
-						  <img src="<?php echo base_url(); ?>include_front/img/slider/a.jpg" style="width:100%">
-						</div>
-
-						<div class="mySlides fade">
-						  <img src="<?php echo base_url(); ?>include_front/img/slider/a.jpg" style="width:100%">
-						</div>
+						<?php } ?>
 
 					</div>
 					<br>
 
 					<div style="text-align:center">
+					<?php foreach($slider as $sld){?>
 					  <span class="dot"></span> 
-					  <span class="dot"></span> 
-					  <span class="dot"></span> 
+					<?php } ?> 
 					</div>
 				</div>
 				<div class="row">
