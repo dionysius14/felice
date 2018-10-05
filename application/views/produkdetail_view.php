@@ -100,7 +100,7 @@
 						<div class="row">
 							<div style="margin-left:32px" class="col-md-5">
 								<h3>
-									<b>Felice Florist Souvenir</b>
+									<b>Agnes Parcel'n Souvenir</b>
 								</h3>
 								 <?php 
 								 if(count($produkdetail)>0){
