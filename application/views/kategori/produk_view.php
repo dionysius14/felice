@@ -28,8 +28,8 @@
 					}
 					?>
 					
-    <title>Felice Florist Souvenir | Product <?php echo "- ".$titel; ?></title>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/title.png">
+    <title>Agnes Parcel'n Souvenir | Home</title>
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.jpg">
 
     <!-- Bootstrap Core CSS -->
 	<link href="<?php echo base_url(); ?>include_front/css/bootstrap.css" rel="stylesheet">

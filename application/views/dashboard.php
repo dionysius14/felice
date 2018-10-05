@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="<?php echo base_url(); ?>include/js/jquery.min.js"></script> 
         <?php $this->load->view('common/time'); ?>
     </head>
-    <body  style="background-image:url('<?php echo base_url(); ?>include_front/img/felice.png'),linear-gradient(#ffe4eb, #ff799e);background-repeat: no-repeat;background-position: center;">
+    <body  style="background-image:url('<?php echo base_url(); ?>include_front/img/ags.png');background-repeat: no-repeat;background-position: center;">
         <?php $this->load->view('common/menu'); ?>
        
         <div id="container">

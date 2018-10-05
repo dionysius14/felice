@@ -1,6 +1,6 @@
  
-<link rel="SHORTCUT ICON" href="<?php echo base_url(); ?>include_front/img/title.png">
-<title><?php echo $this->session->userdata("title"); ?> | <?php echo $this->session->userdata("subtitle"); ?></title>
+<link rel="SHORTCUT ICON" href="<?php echo base_url(); ?>include_front/img/test.jpg">
+<title>Agnes Parcel'n Souvenir | <?php echo $this->session->userdata("subtitle"); ?></title>
 <link rel="stylesheet" href="<?php echo base_url(); ?>include/css/bootstrap-theme.css" media="all">
 <link rel="stylesheet" href="<?php echo base_url(); ?>include/css/bootstrap.css" media="all">
 <link rel="stylesheet" href="<?php echo base_url(); ?>include/css/sticky-footer.css" media="all">
