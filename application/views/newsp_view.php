@@ -18,6 +18,7 @@
     <link href="<?php echo base_url(); ?>include_front/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/slimbox2.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/image.css">
 	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -105,8 +106,10 @@
 										<div class="date">
 											<span><?php echo date('d M Y',strtotime($nw->news_date)); ?></span>
 										</div>
-										<div class="news-desc">
-											<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
+										<div style="margin-left:10px;margin-right:10px" class="news-desc">
+											<figure>
+												<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
+											</figure>
 											<p>
 											 <?php
 												$string = strip_tags($nw->news_konten);

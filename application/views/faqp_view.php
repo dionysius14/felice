@@ -95,11 +95,17 @@
                          <a href="#menu-toggle" class="margin_menu btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div> 
+                <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
+                	<div style="margin-top:5px" class="col-md-11">
+						<center>
+							<h1>Frequent Ask Question</h1>
+						</center>
+					</div>	
+                </div>
 				<div class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-						<div class="row">
+						<div class="row" class="col-md-11">
 							<h3>
-								<b>Frequent Ask Question</b>
 								</h3>
 								<table class="well">
 										<?php

@@ -185,7 +185,7 @@
 							<div class="col-md-2">	
 						 		<input type="text" id="min" name="min" class="form-control" placeholder="Harga Terendah">
 							</div>
-							<div class="col-md-1">
+							<div style="margin-top:5px" class="col-md-1">
 								<center>-</center>
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-2">
