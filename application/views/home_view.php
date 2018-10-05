@@ -177,37 +177,40 @@
 					</div>
 				</div>
 				<div class="row">
-					<div style="margin-left:32px;margin-right:32px" class="col-md-11"> 
+					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
 						<?php echo form_open('home/search', 'id="form_add"'); ?>
-						 <div class="col-md-2">	
-						 <input type="text" id="min" name="min" class="form-control" placeholder="Min Price">
-						 </div>	
-						 <div class="col-md-1">	
-						 <center>-</center>
-						 </div>	
-						 <div class="col-md-2">
-						 <input type="text" id="max" name="max" class="form-control" placeholder="Max Price">
+							<div style="margin-top:5px" class="col-md-1 col-block">
+								<center>Harga:</center>
+							</div>
+							<div class="col-md-2">	
+						 		<input type="text" id="min" name="min" class="form-control" placeholder="Harga Terendah">
+							</div>
+							<div class="col-md-1">
+								<center>-</center>
+							</div>	
+							<div style="margin-left:10px; margin-right:10px" class="col-md-2">
+						 		<input type="text" id="max" name="max" class="form-control" placeholder="Harga Tertinggi">
+						 	</div>
+						 	<div style="margin-top:5px" class="col-md-1 col-block">
+								<center>Cari:</center>
+							</div>	
+							<div style="margin-left:10px; margin-right:10px" class="col-md-4">	
+								<input type="text" id="filter" name="filter" class="form-control" placeholder="Kata Pencarian...">
+							</div>			
+					</div>
+					<div style="margin-top:10px;margin-left:27px;margin-right:10px;margin-bottom:10px" class="col-md-11"> 
+						<div class="col-md-11">
+							<center>  </center>
 						</div>	
+					</div>
+					<div style="margin-left:50px;margin-right:50px" class="col-xs-13 col-xs-offset-0 col-sm-offset-3 col-sm-11" >
+						<div class="btn btn-default btn-block">	
+								<input type="submit" id="filter" name="filter" class="form-control" value="Cari">
+						</div>
 					</div>	
+					<?php echo form_close(); ?> 
 				</div>	
 				<br/>
-				<div class="row">
-					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-						<div class="col-md-5">	
-								<input type="text" id="filter" name="filter" class="form-control" placeholder="Keyword">
-						</div>	
-					</div>	
-				</div>	
-				<br/>
-				<div class="row">
-					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-						<div class="col-md-5">	
-								<input type="submit" id="filter" name="filter" class="form-control">
-						</div>	
-					</div>	
-				</div>
-				<?php echo form_close(); ?> 	
-				<br/>				
 				<div class="row">
 						 <?php foreach($produk as $val){?>
 						 <div class="col-md-3">						
