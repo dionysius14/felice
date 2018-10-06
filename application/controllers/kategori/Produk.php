@@ -9,6 +9,7 @@ class produk extends CI_Controller {
         // Model template
 		$this->load->model('produk_model');
 		$this->load->model('kategori_model');
+		$this->load->library('pagination');
         // Place your model here...
     }
 	public function index($id=""){
@@ -18,11 +19,4 @@ class produk extends CI_Controller {
 		$data['select'] = $id;
 		$this->load->view('kategori/produk_view',$data);
 	}
-
-	public function showlimit(){
-		$data['get_top_eight'] = $this->produk_model->get_top_eight();
-		$this->load->view('kategori/produktopeight_view',$data);
-	}
-	
-
 }

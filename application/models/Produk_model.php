@@ -28,17 +28,7 @@ class produk_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result() ;
 	}
-
-	public function get_top_eight()
-	{
-		$this->db->select();
-        $this->db->from('data_produk u');
-		$this->db->join('kategori a', 'a.kategori_id=u.kategori_id and a.is_delete=0');
-        $this->db->where('u.is_delete', '0');
-        $this->db->limit(8);
-		$query = $this->db->get();
-		return $query->result() ;
-	}
+	
 	public function get_by_id($produk_id)
 	{
 		 $this->db->select();
