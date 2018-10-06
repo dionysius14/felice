@@ -8,7 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+	<?php 
+					$product="";
+					if(isset($select))
+					{
+						if(!empty($get_all_kategori))
+						{
+							foreach($get_all_kategori as $val)
+							{
+							$true="";
+							if($select==$val->kategori_id)
+							$titel=$val->kategori_nama;
+							}
+						}
+					}						
+					else
+					{
+						$product="class='selected'";
+					}
+					?>
+					
     <title>Agnes Parcel'n Souvenir | Home</title>
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.jpg">
 
@@ -18,7 +37,6 @@
     <link href="<?php echo base_url(); ?>include_front/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/slimbox2.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/image.css">
 	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,29 +64,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Produk</a>
+                    
+					
+					<a href="#" <?php echo $product; ?> >Produk</a>
 					 <ul class="submenu" style="overflow:auto;height:350px">
-							<li><a href="<?php echo site_url('kategori/produk/index/1');?>">Acrylic</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/2');?>">Bantal</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/3');?>">Gantungan</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/4');?>">Gelas & Mug</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/5');?>" >Handuk</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/6');?>">Kipas</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/7');?>">Paketan</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/8');?>">Plakat</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/9');?>">Pouch</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/10');?>">Tas</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/11');?>">Tempat Cincin</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/12');?>">Tempat Gula</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/13');?>">Tempat Lada</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/14');?>">Tempat Lilin</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/15');?>">Tempat Tisue</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/16');?>">Tempat Pensil</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/17');?>">Teplok</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/18');?>">Toples</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/19');?>">Tumbler</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/20');?>">Undangan</a></li>
+						<?php
+						if(!empty($get_all_kategori))
+						{
+							foreach($get_all_kategori as $val)
+							{
+							$true="";
+							if($select==$val->kategori_id)
+							$true="class='selected'";
+							
+							?>
+							<li><a href="<?php echo site_url('kategori/produk/index/'.$val->kategori_id.'');?>" <?php echo $true; ?>><?php echo $val->kategori_nama;?></a></li>
+							<?php 
+							}
+						}?> 
+						
+						
 					</ul>
+						
                 </li>
                	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
                 <li><a href="<?php echo site_url('faqp/index');?>" >FAQ</a></li>
@@ -87,7 +104,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						 <a href="<?php echo site_url('home/index');?>">
-						   <center><img class="banner" style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
+						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
 						</a>
 					</div>
 				</div>
@@ -96,45 +113,40 @@
                          <a href="#menu-toggle" class="margin_menu btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div> 
+				
 				<div class="row">
-					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-						<div class="row">
-							<?php foreach($news as $nw){?>
-								<div class="news-items well">
-									<div class="item">
-										<h2 ><?php echo $nw->news_judul; ?></h2>
-										<div class="date">
-											<span><?php echo date('d M Y',strtotime($nw->news_date)); ?></span>
+					<?php
+						if(!empty($get_top_eight))
+						{
+							foreach($get_top_eight as $val)
+							{
+							?>
+							
+							<div class="col-md-3">						
+							<div class="main">
+								<div class="work">
+									<a href="<?php echo site_url("produkdetail?id=".$val->produk_id.""); ?>" >
+										<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
+										<div class="caption">
+											<div class="work_title">
+												<h1><?php echo $val->produk_nama; ?></h1>
+												<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
+												<?php echo $val->produk_deskripsi; ?>
+												</h4>
+											</div>
 										</div>
-										<div style="margin-left:10px;margin-right:10px" class="news-desc">
-											<figure class="newscontent">
-												<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
-											</figure>
-											<p>
-											 <?php
-												$string = strip_tags($nw->news_konten);
-												if (strlen($string) > 350) {
-													// truncate string
-													$stringCut = substr($string, 0, 350);
-
-													// make sure it ends in a word so assassinate doesn't become ass...
-													$string = substr($stringCut, 0, strrpos($stringCut, ' ')) . '... ';
-												} else
-													$string = substr($string, 0, strrpos($string, ' ')) . '... ';
-												echo $string;
-												?>
-											</p>
-										</div>
-										<div class="viewall">
-											<span><a href="<?php echo site_url("newsdetail?id=".$nw->news_id.""); ?>">Read More</a></span>
-										</div>
-									</div>
+									</a>
 								</div>
-							<?php } ?>
-							<center><?php echo $this->pagination->create_links(); ?></center>
-						</div>
-					</div>
-                </div>
+								<center><?php echo $val->produk_nama; ?></center>
+								<center><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></center><br/>
+							</div>
+							</div>
+						
+							<?php
+							}
+						}
+						?>
+						
                 </div>
             </div>
         </div>

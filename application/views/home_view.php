@@ -115,7 +115,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Produk</a>
+                    <a href="<?php echo site_url('kategori/produk/showlimit');?>">Produk</a>
 					 <ul class="submenu" style="overflow:auto;height:350px">
 						<?php
 						if(!empty($get_all_kategori))

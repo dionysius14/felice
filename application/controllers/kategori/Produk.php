@@ -18,6 +18,11 @@ class produk extends CI_Controller {
 		$data['select'] = $id;
 		$this->load->view('kategori/produk_view',$data);
 	}
+
+	public function showlimit(){
+		$data['get_top_eight'] = $this->produk_model->get_top_eight();
+		$this->load->view('kategori/produktopeight_view',$data);
+	}
 	
 
 }

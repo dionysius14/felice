@@ -12,8 +12,16 @@ figure:after {
   position: relative;
 }
  
-img {
-  width: 50%;
-  height: 50%;
-  margin: 0;
-  padding: 0;
+img .newscontent{
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+img .banner {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+    padding: 0;
+}
