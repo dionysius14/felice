@@ -95,13 +95,24 @@
                          <a href="#menu-toggle" class="margin_menu btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div> 
-				<div class="row">
+                <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
+                    <div style="margin-top:5px" class="col-md-11">
+                        <center>
+                            <h1>How To Order</h1>
+                        </center>
+                    </div>  
+                </div>
+                <p style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px" align="justify"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+                <h4 style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px">
+                    <b>Cara Order di Agnes Parcel & Souvenir: </b>
+                </h4>
+				<div style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px" class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
 						<div class="row">
 						<?php
 									foreach ($howto as $ht) {
 									?>
-									<b><?php echo $ht->howto_step ?></b>
+									<p align="justify">- <?php echo $ht->howto_step ?></p>
 									<?php
 							}
 							?>
