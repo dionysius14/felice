@@ -18,6 +18,7 @@
     <link href="<?php echo base_url(); ?>include_front/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/slimbox2.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/image.css">
 	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -106,7 +107,7 @@
 									</div>
 									<div class="news-desc">
 										<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
-										<p><?php echo $newsdetail->news_konten; ?>
+										<p align="justify"><?php echo $newsdetail->news_konten; ?>
 										</p>
 									</div>
 								</div>
