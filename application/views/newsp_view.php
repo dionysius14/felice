@@ -110,7 +110,7 @@
 											<figure>
 												<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
 											</figure>
-											<p align="justify">
+											<p style="margin-top: 10px; margin-bottom: 10px" align="justify">
 											 <?php
 												$string = strip_tags($nw->news_konten);
 												if (strlen($string) > 350) {

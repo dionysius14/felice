@@ -107,7 +107,7 @@
 									</div>
 									<div class="news-desc">
 										<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
-										<p align="justify"><?php echo $newsdetail->news_konten; ?>
+										<p style="margin-top: 10px" align="justify"><?php echo $newsdetail->news_konten; ?>
 										</p>
 									</div>
 								</div>
