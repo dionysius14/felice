@@ -229,7 +229,7 @@
 									</a>
 								</div>
 								<center><?php echo $val->produk_nama; ?></center>
-								<center><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></center><br/>
+								<center><h4><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></h4></center><br/>
 							</div>
 						</div>
 						 <?php } ?>
