@@ -8,26 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-<?php 
-					$product="";
-					if(isset($select))
-					{
-						if(!empty($get_all_kategori))
-						{
-							foreach($get_all_kategori as $val)
-							{
-							$true="";
-							if($select==$val->kategori_id)
-							$titel=$val->kategori_nama;
-							}
-						}
-					}						
-					else
-					{
-						$product="class='selected'";
-					}
-					?>
-					
+
     <title>Agnes Parcel'n Souvenir | Home</title>
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.jpg">
 
@@ -44,7 +25,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -53,20 +33,18 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                 <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+               <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
                 </li>
 				<li>
-                    <a href="<?php echo site_url('home/index');?>">
+                    <a href="<?php echo site_url('home/index');?>" class="selected">
                        Home
                     </a>
                 </li>
                 <li>
-                    
-					
-					<a href="#" <?php echo $product; ?> >Produk</a>
+                    <a href="">Produk</a>
 					 <ul class="submenu" style="overflow:auto;height:350px">
 						<?php
 						if(!empty($get_all_kategori))
@@ -75,23 +53,20 @@
 							{
 							$true="";
 							if($select==$val->kategori_id)
-							$true="class='selected'";
+							$true="selected";
 							
 							?>
 							<li><a href="<?php echo site_url('kategori/produk/index/'.$val->kategori_id.'');?>" <?php echo $true; ?>><?php echo $val->kategori_nama;?></a></li>
 							<?php 
 							}
-						}?> 
-						
-						
+						}?>
 					</ul>
-						
                 </li>
                	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
-                <li><a href="<?php echo site_url('faqp/index');?>" >FAQ</a></li>
-                <li><a href="<?php echo site_url('newsp/index');?>" class="selected">Article / News</a></li>
-                <li><a href="<?php echo site_url('testimonialp/index');?>" >Testimonial</a></li>
-                <li><a href="<?php echo site_url('kontak/index');?>" >Contact Us</a></li>
+                <li><a href="<?php echo site_url('faqp/index');?>">FAQ</a></li>
+                <li><a href="<?php echo site_url('newsp/index');?>">Article / News</a></li>
+                <li><a href="<?php echo site_url('testimonialp/index');?>">Testimonial</a></li>
+                <li><a href="<?php echo site_url('kontak/index');?>">Contact Us</a></li>
 				<li><a href="<?php echo site_url('about/index');?>">About Us</a></li>
             </ul>
 			   <?php $this->load->view('common/footer_link'); ?>
@@ -113,7 +88,6 @@
                          <a href="#menu-toggle" class="margin_menu btn btn-default" id="menu-toggle">Menu</a>
                     </div>
                 </div> 
-				
 				<div class="row">
 					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
 						<?php echo form_open('home/search', 'id="form_add"'); ?>
@@ -121,19 +95,19 @@
 								<center>Harga:</center>
 							</div>
 							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-						 		<input type="number" id="min" name="min" class="form-control" placeholder="Harga Terendah">
+						 		<input type="number" id="min" name="min" value="<?php echo $this->session->userdata('min') ?>" class="form-control" placeholder="Harga Terendah">
 							</div>
 							<div style="margin-top:5px" class="col-md-1">
 								<center>-</center>
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-						 		<input type="number" id="max" name="max" class="form-control" placeholder="Harga Tertinggi">
+						 		<input type="number" id="max" name="max" value="<?php echo $this->session->userdata('max') ?>" class="form-control" placeholder="Harga Tertinggi">
 						 	</div>
 							<div style="margin-top:5px" class="col-md-1 col-block">
 								<center>Sort:</center>
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-4">	
-								<select class="form-control" id="sort" name="sort" >
+								<select class="form-control" value="<?php echo $this->session->userdata('sort') ?>" id="sort" name="sort" >
 								  <option value="up">Harga Tinggi - Rendah [Z-a]</option>
 								  <option value="down">Harga Rendah - Tinggi [A-z]</option>
 								</select>
@@ -144,7 +118,7 @@
 								<center>Cari:</center>
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-5">	
-								<input type="text" id="keyword" name="keyword" class="form-control" placeholder="Kata Pencarian...">
+								<input type="text" id="keyword" value="<?php echo $this->session->userdata('keyword') ?>" name="keyword" class="form-control" placeholder="Kata Pencarian...">
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-1">	
 							</div>	
@@ -156,14 +130,10 @@
 				</div>	
 				<br/>
 				<div class="row">
-					<?php
-						if(!empty($get_all))
-						{
-							foreach($get_all as $val)
-							{
-							?>
-							
-							<div class="col-md-3">						
+						 <?php
+						if(count($produk)>0){
+						 foreach($produk as $val){?>
+						 <div class="col-md-3">						
 							<div class="main">
 								<div class="work">
 									<a href="<?php echo site_url("produkdetail?id=".$val->produk_id.""); ?>" >
@@ -179,15 +149,14 @@
 									</a>
 								</div>
 								<center><?php echo $val->produk_nama; ?></center>
-								<center><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></center><br/>
+								<center><h4><b>Rp <?php echo number_format($val->produk_harga, 0, ',', '.'); ?></b></h4></center><br/>
 							</div>
-							</div>
-						
-							<?php
-							}
-						}
-						?>
-						
+						</div>
+						<?php }}else{
+							echo '<center><h4><b>--- Produk Tidak Ditemukan ---</b></h4></center>';
+						} ?>
+				</div>
+							<center><?php echo $this->pagination->create_links(); ?></center>
                 </div>
             </div>
         </div>

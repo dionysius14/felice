@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class home extends CI_Controller {
+class Search extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -19,7 +19,26 @@ class home extends CI_Controller {
 		$data['select'] = '1';
 		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();	
 		$config['base_url'] = site_url('home/index/');
-        $rows = $this->db->query('SELECT * FROM data_produk ORDER BY produk_tgl_input DESC')->result();
+		
+        $keyword = $this->session->userdata('keyword');
+        $min = $this->session->userdata('min');
+        $max = $this->session->userdata('max');
+        $sort = $this->session->userdata('sort');
+		$sortfilter = "DESC";
+		if($this->session->userdata('sort')!= ""){
+			if($sort == "up"){
+				$sortfilter = "DESC";
+			}else{
+				$sortfilter = "ASC";
+			}
+		}
+		if($min != "" && $max != ""){
+			$rows = $this->db->query('SELECT * FROM data_produk where produk_nama like "%'.$keyword.'%" and produk_harga >= '.$min.' and produk_harga <= '.$max.' ORDER BY produk_tgl_input '.$sortfilter.' ')->result();
+			
+		}else{
+			$rows = $this->db->query('SELECT * FROM data_produk where produk_nama like "%'.$keyword.'%" ORDER BY produk_tgl_input '.$sortfilter.' ')->result();
+			
+		}
 		$data['slider'] = $this->db->query('SELECT * FROM slider ')->result();
         $config['total_rows'] = count($rows);
         $config['per_page'] = 24;
@@ -43,23 +62,15 @@ class home extends CI_Controller {
         } else {
             $page = 0;
         }
-        $data['produk'] = $this->db->query('SELECT * FROM data_produk ORDER BY produk_tgl_input DESC LIMIT ' . $page . ',' . $config['per_page'])->result();	
+		if($min != "" && $max != ""){
+			$data['produk'] = $this->db->query('SELECT * FROM data_produk where produk_nama like "%'.$keyword.'%" and produk_harga >= '.$min.' and produk_harga <= '.$max.' ORDER BY produk_tgl_input '.$sortfilter.' LIMIT ' . $page . ',' . $config['per_page'])->result();
+			
+		}else{
+			$data['produk'] = $this->db->query('SELECT * FROM data_produk where produk_nama like "%'.$keyword.'%" ORDER BY produk_tgl_input '.$sortfilter.' LIMIT ' . $page . ',' . $config['per_page'])->result();
+			
+		}	
 		
-        $this->load->view('home_view',$data);
-    }
-
-
-    public function search(){
-        $keyword = $this->input->post('keyword');
-        $min = $this->input->post('min');
-        $max = $this->input->post('max');
-        $sort = $this->input->post('sort');
-        $this->session->set_userdata('min',$min);
-        $this->session->set_userdata('max',$max);
-        $this->session->set_userdata('sort',$sort);
-        $this->session->set_userdata('keyword',$keyword);
-        // echo $keyword;
-        redirect('search');
+        $this->load->view('search_view',$data);
     }
 
 }
