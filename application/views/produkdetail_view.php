@@ -111,10 +111,11 @@
 												<a href="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto;?>" rel="lightbox[gallery]">
 												<img src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" class="media" alt=""/>
 												<div class="caption">
-													<div class="work_title">
-														<h1><?php echo $produk->produk_nama; ?></h1>
+													<div style="margin-top:10px" class="work_title">
+														<h1><b>Deskripsi Produk</b></h1>
+														<h2><?php echo $produk->produk_nama; ?></h2>
 														<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
-														<?php echo $produk->produk_deskripsi; ?>
+															<?php echo $produk->produk_deskripsi; ?>
 														</h4>
 													</div>
 												</div>

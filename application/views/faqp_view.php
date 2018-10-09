@@ -105,10 +105,7 @@
                 <div class="row">
                 	<div style="margin-left:20px;margin-right:20px" class="col-md-11">
                 	
-                			<?php
-							foreach ($faq as $fd) 
-							{
-								?>
+                			<?php foreach ($faq as $fd) {?>
 								<div class="col-md-6">
 									<div style="margin-top:5px" class="col-md-11">
 										<h3><b><?php echo $fd->faq_ask ?></b></h3>
@@ -117,9 +114,7 @@
 										<p align="justify"><?php echo $fd->faq_answer ?></p>
 									</div>
 								</div>
-							<?php
-							}
-						?>
+							<?php } ?>
 					</div>
                 </div>
                 </div>

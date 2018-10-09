@@ -87,7 +87,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						 <a href="<?php echo site_url('home/index');?>">
-						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
+						   <center><img class="banner-news" style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
 						</a>
 					</div>
 				</div>
@@ -106,9 +106,11 @@
 										<div class="date">
 											<span><?php echo date('d M Y',strtotime($nw->news_date)); ?></span>
 										</div>
-										<div style="margin-left:10px;margin-right:10px" class="news-desc">
+										<div style="margin-top:10px;margin-left:10px;margin-right:10px" class="news-desc">
 											<figure>
-												<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
+												<center>
+												<img style="width:300px" src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
+												</center>
 											</figure>
 											<p style="margin-top: 10px; margin-bottom: 10px" align="justify">
 											 <?php

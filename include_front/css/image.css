@@ -12,9 +12,31 @@ figure:after {
   position: relative;
 }
  
-img {
+/*img {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+}*/
+
+img .banner-news{
+    width: 0px;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+img .news-page{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+img .testimonial-page{
     width: 50%;
     height: 50%;
     margin: 0;
     padding: 0;
 }
+

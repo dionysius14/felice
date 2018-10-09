@@ -106,8 +106,12 @@
 										<span><?php echo date('d M Y',strtotime($newsdetail->news_date)); ?></span>
 									</div>
 									<div class="news-desc">
-										<img src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
-										<p style="margin-top: 10px" align="justify"><?php echo $newsdetail->news_konten; ?>
+                                        <figure>
+                                            <center>
+										      <img style="width:350px" src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
+										    </center>
+                                        </figure>
+                                        <p style="margin-top: 10px" align="justify"><?php echo $newsdetail->news_konten; ?>
 										</p>
 									</div>
 								</div>

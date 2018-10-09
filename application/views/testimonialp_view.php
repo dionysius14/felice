@@ -18,6 +18,7 @@
     <link href="<?php echo base_url(); ?>include_front/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/slimbox2.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/image.css">
 	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +37,7 @@
             <ul class="sidebar-nav">
                  <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
-                       <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
+                       <img style="margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
                 </li>
 				<li>
@@ -86,7 +87,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						 <a href="<?php echo site_url('home/index');?>">
-						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
+						   <center><img class="banner-news"style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
 						</a>
 					</div>
 				</div>
@@ -94,23 +95,29 @@
                     <div class="col-md-12">
                          <a href="#menu-toggle" class="margin_menu btn btn-default" id="menu-toggle">Menu</a>
                     </div>
+                </div>
+                 <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
+                    <div style="margin-top:5px" class="col-md-11">
+                        <center>
+                            <h1>Testimonial</h1>
+                        </center>
+                    </div>  
                 </div> 
 				<div class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-						<div class="row">
-							<?php foreach($testimonial as $ts){?>
-								<div class="news-items well">
-									<div class="item">
-										<div class="news-desc">
-											<img src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>">
-											<h2 ><?php echo $ts->testimonial_nama; ?></h2>
-											<p>
-											 <?php echo $ts->testimonial_ket; ?>
-											</p>
-										</div>
-									</div>
-								</div>
-							<?php } ?>
+                        <div class="row">
+                             <?php foreach($testimonial as $ts){?>
+                                <div class="col-md-6">
+                                    <div style="margin-top:5px" class="col-md-5">
+                                        <img style="width:200px" src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>">
+                                    </div>
+                                    <div style="margin-top:20px" class="col-md-5 well">
+                                        <h2 ><?php echo $ts->testimonial_nama; ?></h2>
+                                        <p><?php echo $ts->testimonial_ket; ?></p>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
 							<center><?php echo $this->pagination->create_links(); ?></center>
 						</div>
 					</div>
