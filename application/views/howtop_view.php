@@ -110,7 +110,7 @@
 									foreach ($howto as $ht) {
 									?>
 									<center>
-									<h4><b>Step <?php echo $index ?></b></h4>
+									<h3><img src="<?php echo base_url(); ?>include/img/verifikasi.png" />&nbsp;<b>Step <?php echo $index ?></b></h3>
 									<p> <?php echo $ht->howto_step ?></p></center>
 						<?php
 							$index++;}

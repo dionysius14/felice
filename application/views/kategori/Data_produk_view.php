@@ -78,6 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								var arr = JSON.parse(result);
 										$('#kategori_id').val(arr[0].kategori_id);
 										$('#produk_nama').val(arr[0].produk_nama);
+										$('#produk_harga').val(arr[0].produk_harga);
 										$('#produk_deskripsi').val(arr[0].produk_deskripsi);
 										$('#produk_ket').val(arr[0].produk_ket);
 										$('#datamodel').val(arr[0].datamodel);
@@ -230,6 +231,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </td> 
 										<td class="col-md-3 borderkanan" data-title="'Nama Produk'" sortable="'produk_nama'">
                                             <span id="produk_nama{{$index}}" >{{produk.produk_nama}}</span>
+                                        </td> 
+										<td align="right" class="col-md-2 borderkanan" data-title="'Harga'" sortable="'produk_harga'">
+                                            <span id="produk_harga{{$index}}" >Rp {{produk.produk_harga}}</span>
                                         </td> 
 										 <td class="col-md-3 borderkanan" data-title="'Deskripsi Produk'" sortable="'produk_deskripsi'">
                                             <span id="produk_deskripsi{{$index}}" >{{produk.produk_deskripsi}}</span>

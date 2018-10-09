@@ -105,14 +105,14 @@
                 </div> 
 				<div class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-                        <div class="row">
+                        <div class="row well">
                              <?php foreach($testimonial as $ts){?>
                                 <div class="col-md-6">
                                     <div style="margin-top:5px" class="col-md-5">
-                                        <img style="width:200px" src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>">
+                                        <img style="width:100%;" src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>">
                                     </div>
-                                    <div style="margin-top:20px" class="col-md-5 well">
-                                        <h2 ><?php echo $ts->testimonial_nama; ?></h2>
+                                    <div style="margin-left:20px; margin-top:20px" class="col-md-5">
+                                        <h3 ><?php echo $ts->testimonial_nama; ?></h3>
                                         <p><?php echo $ts->testimonial_ket; ?></p>
                                     </div>
                                 </div>

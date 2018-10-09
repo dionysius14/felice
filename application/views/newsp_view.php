@@ -104,12 +104,12 @@
 									<div class="item">
 										<h2 ><?php echo $nw->news_judul; ?></h2>
 										<div class="date">
-											<span><?php echo date('d M Y',strtotime($nw->news_date)); ?></span>
+											<span><font color="red"><?php echo date('d M Y',strtotime($nw->news_date)); ?></font></span>
 										</div>
 										<div style="margin-top:10px;margin-left:10px;margin-right:10px" class="news-desc">
 											<figure>
 												<center>
-												<img style="width:300px" src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
+												<img style='width:75%;' src="<?php echo base_url(); ?>include_front/img/news/<?php echo $nw->news_foto; ?>">
 												</center>
 											</figure>
 											<p style="margin-top: 10px; margin-bottom: 10px" align="justify">
@@ -127,8 +127,8 @@
 												?>
 											</p>
 										</div>
-										<div class="viewall">
-											<span><a href="<?php echo site_url("newsdetail?id=".$nw->news_id.""); ?>">Read More</a></span>
+										<div  style="margin-top:10px;margin-left:10px;margin-right:10px" class="viewall">
+											<span><a href="<?php echo site_url("newsdetail?id=".$nw->news_id.""); ?>">Read More...</a></span>
 										</div>
 									</div>
 								</div>

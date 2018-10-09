@@ -103,12 +103,12 @@
 							<div class="item">
 									<h2><?php echo $newsdetail->news_judul; ?></h2>
 									<div class="date">
-										<span><?php echo date('d M Y',strtotime($newsdetail->news_date)); ?></span>
+										<span><font color="red"><?php echo date('d M Y',strtotime($newsdetail->news_date)); ?></font></span>
 									</div>
 									<div class="news-desc">
                                         <figure>
                                             <center>
-										      <img style="width:350px" src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
+										      <img style='width:100%;' src="<?php echo base_url(); ?>include_front/img/news/<?php echo $newsdetail->news_foto; ?>">
 										    </center>
                                         </figure>
                                         <p style="margin-top: 10px" align="justify"><?php echo $newsdetail->news_konten; ?>

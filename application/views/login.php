@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta charset="utf-8"> 
 				
-		<link rel="SHORTCUT ICON" href="<?php echo base_url(); ?>include_front/img/title.png">
+		<link rel="SHORTCUT ICON" href="<?php echo base_url(); ?>include_front/img/test.jpg">
 		<title><?php echo $this->session->userdata("title"); ?></title>
         <!--?php $this->load->view('common/head'); ?-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>include/css/bootstrap-theme.min.css" media="all">

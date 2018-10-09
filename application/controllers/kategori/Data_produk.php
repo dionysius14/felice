@@ -43,6 +43,7 @@ class data_produk extends CI_Controller {
             $temp['datamodel'] = $tmp->produk_id;
             $temp['kategori_id'] = $tmp->kategori_id;
             $temp['produk_foto'] = base_url().'/include_front/img/produk/'.$tmp->produk_foto;
+            $temp['produk_harga'] = $tmp->produk_harga;
             $temp['produk_nama'] = $tmp->produk_nama;
             $temp['produk_deskripsi'] = $tmp->produk_deskripsi;
             $temp['is_delete'] = $tmp->is_delete;
@@ -68,6 +69,7 @@ class data_produk extends CI_Controller {
             $temp['kategori_nama'] = $tmp->kategori_nama;
             $temp['produk_foto'] = $tmp->produk_foto;
             $temp['produk_nama'] = $tmp->produk_nama;
+            $temp['produk_harga'] = $tmp->produk_harga;
             $temp['produk_deskripsi'] = $tmp->produk_deskripsi;
             $temp['is_delete'] = $tmp->is_delete;
             $temp['is_permanent'] = $tmp->is_permanent;
@@ -82,6 +84,7 @@ class data_produk extends CI_Controller {
         $dataData = array(
             'kategori_id' => urldecode($_POST['kategori_id']),
             // 'produk_foto' => urldecode($_POST['produk_foto']),
+            'produk_harga' => urldecode($_POST['produk_harga']),
             'produk_nama' => urldecode($_POST['produk_nama']),
             'produk_deskripsi' => urldecode($_POST['produk_deskripsi']),
             'produk_tgl_input' => date("y-m-d"),
@@ -131,6 +134,7 @@ class data_produk extends CI_Controller {
 								'kategori_id' => urldecode($_POST['kategori_id']),
 								'produk_foto' =>  $nm_file ,
 								'produk_nama' => urldecode($_POST['produk_nama']),
+								'produk_harga' => urldecode($_POST['produk_harga']),
 								'produk_deskripsi' => urldecode($_POST['produk_deskripsi']),
 								'produk_tgl_input' => date("y-m-d"),
 								'produk_ket' => urldecode($_POST['produk_ket']),
@@ -210,6 +214,7 @@ class data_produk extends CI_Controller {
 								'kategori_id' => urldecode($_POST['kategori_id']),
 								'produk_foto' =>  $nm_file ,
 								'produk_nama' => urldecode($_POST['produk_nama']),
+								'produk_harga' => urldecode($_POST['produk_harga']),
 								'produk_deskripsi' => urldecode($_POST['produk_deskripsi']),
 								'produk_tgl_input' => date("y-m-d"),
 								// 'produk_ket' => urldecode($_POST['produk_ket']),

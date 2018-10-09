@@ -144,7 +144,7 @@ class slider extends CI_Controller {
 							{
 								$this->delete_images($_SERVER['DOCUMENT_ROOT'].'/felice_ci/include_front/img/slider',$_POST['datamodel']);
 								$dataData = array(
-									'slider_foto' =>  $nm_file 
+									'foto' =>  $nm_file 
 								);
 							}
 							

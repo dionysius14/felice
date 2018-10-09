@@ -112,11 +112,7 @@
 												<img src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" class="media" alt=""/>
 												<div class="caption">
 													<div style="margin-top:10px" class="work_title">
-														<h1><b>Deskripsi Produk</b></h1>
-														<h2><?php echo $produk->produk_nama; ?></h2>
-														<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
-															<?php echo $produk->produk_deskripsi; ?>
-														</h4>
+														<p><?php echo $produk->produk_deskripsi; ?></p>
 													</div>
 												</div>
 											</a>
@@ -131,26 +127,38 @@
 							<table>
 									<tr>
 										<td class="col-lg-2">
-										Produk	
+											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
+												<b>Produk</b>
+											</h3>		
 										</td>
 										<td>
+											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
 											<?php echo $produk->produk_nama; ?>
+											</h3>	
 										</td>
 									</tr>
 									<tr>
 										<td class="col-lg-2">
-										Deskripsi  
+											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
+												<b>Deskripsi</b> 
+											</h3>										
 										</td>
 										<td>
+											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
 											<?php echo $produk->produk_deskripsi; ?>
+											</h3>	
 										</td>
 									</tr>
 									<tr>
 										<td class="col-lg-2">
-										Harga  
+											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
+												<b>Harga</b>  
+											</h3>	
 										</td>
 										<td>
-											<b>Rp <?php echo number_format($produk->produk_harga, 0, ',', '.'); ?></b>
+											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
+											<b><font size="8">Rp <?php echo number_format($produk->produk_harga, 0, ',', '.'); ?></font></b>
+											</h3>	
 										</td>
 									</tr>
 									
