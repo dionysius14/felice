@@ -98,7 +98,7 @@
                 <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
                     <div style="margin-top:5px" class="col-md-11">
                         <center>
-                            <h1>Tata Cara Order</h1>
+                            <h1><font face="Times">Tata Cara Order</font></h1>
                         </center>
                     </div>  
                 </div>

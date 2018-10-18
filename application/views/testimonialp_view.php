@@ -99,7 +99,7 @@
                  <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
                     <div style="margin-top:5px" class="col-md-11">
                         <center>
-                            <h1>Testimonial</h1>
+                            <h1><font face="Times">Testimonial</font></h1>
                         </center>
                     </div>  
                 </div> 
