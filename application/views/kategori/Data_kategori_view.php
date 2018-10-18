@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     window.onload = function() {
 					// alert(_edit);
 						
-							$('.loading_gear_gif').show();
+							// $('.loading_gear_gif').show();
 								if (error != "")
 							{
 								if (ubah != '')

@@ -23,8 +23,9 @@ $akses = $this->script_sql->get_data_row($table, $join, $where, $order_by, $grou
         <div id="navbar" class="navbar-collapse collapse" >
             <ul class="nav navbar-nav">
                 <li class=""><a  class="menu" href="<?php echo site_url("dashboard"); ?>"><img src="<?php echo base_url(); ?>include/img/home.png"/>&nbsp;&nbsp;Home</a></li>
-                <li class=""><a  class="menu" href="<?php echo site_url("data/Role/show"); ?>"><img src="<?php echo base_url(); ?>include/img/role.png"/>&nbsp;&nbsp;Data Role</a></li>
-                <li class=""><a  class="menu" href="<?php echo site_url("data/Users/show"); ?>"><img src="<?php echo base_url(); ?>include/img/user.png"/>&nbsp;&nbsp;Data User</a></li>
+				<li class=""><a  class="menu" href="<?php echo site_url("kategori/kategori/show"); ?>"><img src="<?php echo base_url(); ?>include/img/stok.png"/>&nbsp;&nbsp;Data Kategori Produk</a></li>
+				<li class=""><a  class="menu" href="<?php echo site_url("kategori/data_produk/show"); ?>"><img src="<?php echo base_url(); ?>include/img/produk.png"/>&nbsp;&nbsp;Data Produk</a></li>
+				<li class=""><a  class="menu" href="<?php echo site_url("kontak/show"); ?>"><img src="<?php echo base_url(); ?>include/img/inbox.png"/>&nbsp;&nbsp;Data Kontak</a></li>
 				<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;Konten&nbsp;<span class="caret"></span>
@@ -41,47 +42,44 @@ $akses = $this->script_sql->get_data_row($table, $join, $where, $order_by, $grou
 					</ul>
                 </li>
 				
-				<li class=""><a  class="menu" href="<?php echo site_url("kategori/kategori/show"); ?>"><img src="<?php echo base_url(); ?>include/img/stok.png"/>&nbsp;&nbsp;Data Kategori</a></li>
-				<li class=""><a  class="menu" href="<?php echo site_url("kategori/data_produk/show"); ?>"><img src="<?php echo base_url(); ?>include/img/produk.png"/>&nbsp;&nbsp;Data Produk</a></li>
-				<li class=""><a  class="menu" href="<?php echo site_url("data_kontak/show"); ?>"><img src="<?php echo base_url(); ?>include/img/inbox.png"/>&nbsp;&nbsp;Data Pesan</a></li>
 				
-				<li class="dropdown">
+				<!--li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;Pengaturan&nbsp;<span class="caret"></span>
+                        <img src="<?php //echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;Pengaturan&nbsp;<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-header"><strong>Database</strong></li>
                         <?php
-                        $hidden = 'hidden';
-                        if ($akses->result() != null)
-                            $hidden = ($akses->row()->pg_backup == 0) ? 'hidden' : '';
+                        // $hidden = 'hidden';
+                        // if ($akses->result() != null)
+                            // $hidden = ($akses->row()->pg_backup == 0) ? 'hidden' : '';
                         ?>
-                        <li <?php echo $hidden; ?>><a class="menu" href="<?php echo site_url("pengaturan/databased/backup") ?>"><img src="<?php echo base_url(); ?>include/img/backup.png"/>&nbsp;&nbsp;Backup Database</a></li>
+                        <li <?php //echo $hidden; ?>><a class="menu" href="<?php //echo site_url("pengaturan/databased/backup") ?>"><img src="<?php //echo base_url(); ?>include/img/backup.png"/>&nbsp;&nbsp;Backup Database</a></li>
                 <?php
-                $hidden = 'hidden';
-                if ($akses->result() != null)
-                    $hidden = ($akses->row()->pg_restore == 0) ? 'hidden' : '';
+                // $hidden = 'hidden';
+                // if ($akses->result() != null)
+                    // $hidden = ($akses->row()->pg_restore == 0) ? 'hidden' : '';
                 ?>
-                        <li <?php echo $hidden; ?>><a class="menu" href="<?php echo site_url("pengaturan/databased/restore") ?>"><img src="<?php echo base_url(); ?>include/img/restore.png"/>&nbsp;&nbsp;Restore Database</a></li>
+                        <li <?php //echo $hidden; ?>><a class="menu" href="<?php //echo site_url("pengaturan/databased/restore") ?>"><img src="<?php //echo base_url(); ?>include/img/restore.png"/>&nbsp;&nbsp;Restore Database</a></li>
                         <li role="separator" class="divider"></li> 
                         <li class="dropdown-header"><strong>Sistem</strong></li>
 						<?php
-						$hidden = 'hidden';
-						if ($akses->result() != null)
-							$hidden = ($akses->row()->pg_profile == 0) ? 'hidden' : '';
+						// $hidden = 'hidden';
+						// if ($akses->result() != null)
+							// $hidden = ($akses->row()->pg_profile == 0) ? 'hidden' : '';
 						?>
-                        <li <?php echo $hidden; ?>><a class="menu" href="<?php echo site_url("pengaturan/profile/show") ?>"><img src="<?php echo base_url(); ?>include/img/profile.png"/>&nbsp;&nbsp;Profile</a></li>
+                        <li <?php //echo $hidden; ?>><a class="menu" href="<?php //echo site_url("pengaturan/profile/show") ?>"><img src="<?php //echo base_url(); ?>include/img/profile.png"/>&nbsp;&nbsp;Profile</a></li>
 						
 						<?php
-						$hidden = 'hidden';
-						if ($akses->result() != null)
-							$hidden = ($akses->row()->pg_log == 0) ? 'hidden' : '';
+						// $hidden = 'hidden';
+						// if ($akses->result() != null)
+							// $hidden = ($akses->row()->pg_log == 0) ? 'hidden' : '';
 						?>
-						<li <?php echo $hidden; ?>><a href="<?php echo site_url("lainnya/log") ?>"><img src="<?php echo base_url(); ?>include/img/jejak.png"/>&nbsp;&nbsp;Log</a></li> 
+						<li <?php //echo $hidden; ?>><a href="<?php //echo site_url("lainnya/log") ?>"><img src="<?php //echo base_url(); ?>include/img/jejak.png"/>&nbsp;&nbsp;Log</a></li> 
 				  
 						
 					</ul>
-                </li>
+                </li-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
