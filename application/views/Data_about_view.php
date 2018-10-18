@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     window.onload = function() {
 					// alert(_edit);
 						
-							$('.loading_gear_gif').show();
+							// $('.loading_gear_gif').show();
 								if (error != "")
 							{
 								if (ubah != '')
@@ -196,27 +196,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-12">
                                 <table ng-table="tableParams"  class="table table-striped ng-table-responsive" export-csv="csv">
                                     <tr ng-repeat="(datamodel, about) in $data | filter:about.about_nama as results" ng-class="{ 'emphasis': about.about_nama == '<?php echo $this->session->userdata("about_nama") ?>'}">
-                                        <td class="col-md-3 borderkanan" data-title="'Link Facebook'" sortable="'link_fb'">
+                                        <td class="col-md-1 borderkanan" data-title="'Link Facebook'" sortable="'link_fb'">
                                             <span id="link_fb{{$index}}" >{{about.link_fb}}</span>
                                         </td> 
-										<td class="col-md-3 borderkanan" data-title="'Link Instagram #1'" sortable="'link_ig'">
+										<td class="col-md-1 borderkanan" data-title="'Link Instagram #1'" sortable="'link_ig'">
                                             <span id="link_ig{{$index}}" >{{about.link_ig}}</span>
                                         </td> 
-											<td class="col-md-3 borderkanan" data-title="'Link Instagram #2'" sortable="'link_ig_2'">
+											<td class="col-md-1 borderkanan" data-title="'Link Instagram #2'" sortable="'link_ig_2'">
                                             <span id="link_ig_2{{$index}}" >{{about.link_ig_2}}</span>
                                         </td> 
-											<td class="col-md-3 borderkanan" data-title="'Link Instagram #3'" sortable="'link_ig_3'">
+											<td class="col-md-1 borderkanan" data-title="'Link Instagram #3'" sortable="'link_ig_3'">
                                             <span id="link_ig_3{{$index}}" >{{about.link_ig_3}}</span>
                                         </td> 
-										 <td class="col-md-3 borderkanan" data-title="'Link Youtube'" sortable="'link_youtube'">
+										 <td class="col-md-1 borderkanan" data-title="'Link Youtube'" sortable="'link_youtube'">
                                             <span id="link_youtube{{$index}}" >{{about.link_youtube}}</span>
                                         </td> 
-										 <td class="col-md-3 borderkanan" data-title="'Link Twitter'" sortable="'link_twitter'">
-                                            <span id="link_twitter{{$index}}" >{{about.link_twitter}}</span>
-                                        </td> 
-										 <!--<td class="col-md-3 borderkanan" data-title="'Keterangan'" sortable="'about_ket'">
+										 <td class="col-md-3 borderkanan" data-title="'Keterangan'" sortable="'about_ket'">
                                             <span id="about_ket{{$index}}" >{{about.about_ket}}</span>
-                                        </td> -->
+                                        </td> 
                                         <td class="action" data-title="'Actions'" >
                                     <center><a href="" id="about-{{$index}}" datamodel={{about.datamodel}} class="btn btn-default btn-xs" onclick="form_edit(this)"><img src="<?php echo base_url(); ?>include/img/edit.png" /></a>  </center>
                                     </td>

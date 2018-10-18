@@ -68,8 +68,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             if (result != "[]")
                             {
                             var arr = JSON.parse(result);
-                                    $('#testimonial_nama').val(arr[0].testimonial_nama);
-                                    $('#testimonial_ket').val(arr[0].testimonial_ket);
+                                    // $('#testimonial_nama').val(arr[0].testimonial_nama);
+                                    // $('#testimonial_ket').val(arr[0].testimonial_ket);
 										$('#prev').attr("src",arr[0].testimonial_foto);
                                     $('#datamodel').val(arr[0].datamodel);
                                     $('#button').attr("name", "ubah");
@@ -194,14 +194,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <table ng-table="tableParams"  class="table table-striped ng-table-responsive" export-csv="csv">
                                     <tr ng-repeat="(datamodel, testimonial) in $data | filter:testimonial.user_name as results" ng-class="{ 'emphasis': testimonial.role_nama == '<?php echo $this->session->userdata("role_nama") ?>'}">
 										<td align="center" class="col-md-2 borderkanan" data-title="'Foto'" sortable="'testimonial_foto'">
-											<img width="50%" src="<?php echo base_url(); ?>/include_front/img/testimonial/{{testimonial.testimonial_foto}}" />
+											<img width="30%" src="<?php echo base_url(); ?>/include_front/img/testimonial/{{testimonial.testimonial_foto}}" />
                                         </td> 
-                                        <td class="testimonial" data-title="'Nama'" sortable="'testimonial_nama'">
+                                        <!--td class="testimonial" data-title="'Nama'" sortable="'testimonial_nama'">
                                             <span id="user_name_{{$index}}" >{{testimonial.testimonial_nama}}</span>
                                         </td> 
                                         <td class="testimonial" data-title="'Keterangan'" sortable="'testimonial_ket'">
                                             <span id="user_name_{{$index}}" >{{testimonial.testimonial_ket}}</span>
-                                        </td> 
+                                        </td--> 
 
 
                                         <td class="action" data-title="'Actions'" >

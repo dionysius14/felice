@@ -42,8 +42,8 @@ class Testimonial extends CI_Controller {
             $temp['index'] = $index;
             $temp['datamodel'] = $tmp->testimonial_id;
             $temp['testimonial_foto'] = base_url().'/include_front/img/testimonial/'.$tmp->testimonial_foto;
-            $temp['testimonial_nama'] = $tmp->testimonial_nama;
-            $temp['testimonial_ket'] = $tmp->testimonial_ket;
+            // $temp['testimonial_nama'] = $tmp->testimonial_nama;
+            // $temp['testimonial_ket'] = $tmp->testimonial_ket;
             $temp['is_delete'] = $tmp->is_delete;
             array_push($array, $temp);
             $index++;
@@ -61,8 +61,8 @@ class Testimonial extends CI_Controller {
             $temp['index'] = $index;
             $temp['datamodel'] = $tmp->testimonial_id;
             $temp['testimonial_foto'] = $tmp->testimonial_foto;
-            $temp['testimonial_nama'] = $tmp->testimonial_nama;
-            $temp['testimonial_ket'] = $tmp->testimonial_ket;
+            // $temp['testimonial_nama'] = $tmp->testimonial_nama;
+            // $temp['testimonial_ket'] = $tmp->testimonial_ket;
             $temp['is_delete'] = $tmp->is_delete;
             array_push($array, $temp);
             $index++;
@@ -73,21 +73,8 @@ class Testimonial extends CI_Controller {
     public function add() {
         $this->lib->check_session();
         $temp = '0';
-        if (isset($_POST['datamodel']))
-            $user_id = $_POST['datamodel'];
-        $this->form_validation->set_rules('testimonial_nama', 'Name', 'required');
-        $this->form_validation->set_rules('testimonial_ket', 'Keterangan', 'required');
-		if (empty($_FILES['userfile']['name']))
-		{
-			$this->form_validation->set_rules('userfile', 'Foto', 'required');
-		}
         $error = '';
         if (isset($_POST['simpan'])) {
-            if ($this->form_validation->run() == FALSE) {
-                $data['tambah'] = 'tambah';
-                $data['error'] = 'error';
-                $this->load->view('testimonial_view', $data);
-            } else {
               		 $config['upload_path']    = dirname(BASEPATH).'/include_front/img/testimonial/';
 						 $config['allowed_types']  = 'gif|jpg|png|jpeg';
 						 $config['max_size']       = '2000';
@@ -103,9 +90,9 @@ class Testimonial extends CI_Controller {
 							$nm_file = trim(str_replace(" ","",date('dmYHis'))).$datafoto['orig_name'];
 							copy('include_front/img/testimonial/'.$datafoto['orig_name'], 'include_front/img/testimonial/'.$nm_file);
 							$dataData = array(
-								'testimonial_foto' =>  $nm_file ,
-								'testimonial_nama' => urldecode($_POST['testimonial_nama']),
-								'testimonial_ket' => urldecode($_POST['testimonial_ket'])
+								'testimonial_foto' =>  $nm_file 
+								// 'testimonial_nama' => urldecode($_POST['testimonial_nama']),
+								// 'testimonial_ket' => urldecode($_POST['testimonial_ket'])
 							);
 							$this->lib->log("Tambah");
 							$temp = $this->testimonial_model->insert($dataData);
@@ -115,7 +102,6 @@ class Testimonial extends CI_Controller {
 							} else
 								echo "insert Gagal";
 						}  
-            }
         }
     }
 	function delete_images($paths,$produk_id)
@@ -138,15 +124,8 @@ class Testimonial extends CI_Controller {
 
     public function edit() {
         $this->lib->check_session();
-        $this->form_validation->set_rules('testimonial_nama', 'Nama', 'required');
-        $this->form_validation->set_rules('testimonial_ket', 'Keterangan', 'required');
 		$error = '';
         if (isset($_POST['ubah'])) {
-            if ($this->form_validation->run() == FALSE) {
-                $data['ubah'] = 'ubah';
-                $data['error'] = 'error';
-                $this->load->view('testimonial_view', $data);
-            } else {
 					$true = true;
 					if (!empty($_FILES['userfile']['name']))
 					{
@@ -169,18 +148,18 @@ class Testimonial extends CI_Controller {
 							copy('include_front/img/testimonial/'.$datafoto['orig_name'], 'include_front/img/testimonial/'.$nm_file);
 							if (empty($_FILES['userfile']['name']))
 							{
-								$dataData = array(
-									'testimonial_nama' => urldecode($_POST['testimonial_nama']),
-									'testimonial_ket' => urldecode($_POST['testimonial_ket'])
-								);
+								// $dataData = array(
+									// 'testimonial_nama' => urldecode($_POST['testimonial_nama']),
+									// 'testimonial_ket' => urldecode($_POST['testimonial_ket'])
+								// );
 							}
 							else
 							{
 								$this->delete_images($_SERVER['DOCUMENT_ROOT'].'/felice_ci/include_front/img/testimonial',$_POST['datamodel']);
 								$dataData = array(
 									'testimonial_foto' =>  $nm_file ,
-									'testimonial_nama' => urldecode($_POST['testimonial_nama']),
-									'testimonial_ket' => urldecode($_POST['testimonial_ket'])
+									// 'testimonial_nama' => urldecode($_POST['testimonial_nama']),
+									// 'testimonial_ket' => urldecode($_POST['testimonial_ket'])
 								);
 							}
 							
@@ -197,7 +176,6 @@ class Testimonial extends CI_Controller {
 							}
 							
 						}
-		           }
             
         }
     }

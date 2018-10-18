@@ -49,7 +49,7 @@
             </div> 
         </div> 
 		<div class="row">
-            <div class="col-md-3">Keterangan</div>
+            <div class="col-md-3">About Us</div>
             <div class="col-md-9"> 
                 <textarea class="form-control" id="about_ket" name="about_ket" type="text" size="28"  value="<?php echo set_value('about_ket', ''); ?>"> </textarea>
             </div> 

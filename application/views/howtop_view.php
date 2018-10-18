@@ -104,17 +104,14 @@
                 </div>
 				<div class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-						<div class="row well">
 						<?php
 									$index = 1;
 									foreach ($howto as $ht) {
-									?>
-									<h3><img src="<?php echo base_url(); ?>include/img/verifikasi.png" />&nbsp;<b>Step <?php echo $index ?></b></h3>
-									<p> <?php echo $ht->howto_step ?></p>
+									?><p style="font-size:120%;"><img src="<?php echo base_url(); ?>include/img/verifikasi.png" />&nbsp;<b>Step <?php echo $index ?> :</b>
+									 <?php echo $ht->howto_step ?></p>
 						<?php
 							$index++;}
 							?>
-						</div>
 					</div>
                 </div>
                 </div>

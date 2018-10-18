@@ -14,7 +14,8 @@ class about extends CI_Controller {
     public function index() {
 		$profil = $this->data_profile->get_all(); 
 		$this->session->set_userdata("title",$profil->profile_title);
-        $this->load->view('about_view');
+		$data['slider'] = $this->db->query('SELECT * FROM slider ')->result();
+        $this->load->view('about_view',$data);
     }
 
 //    public function index() {

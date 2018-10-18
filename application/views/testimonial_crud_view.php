@@ -5,17 +5,17 @@
     <br/>
     <div class="pdiv">
         <?php echo form_open_multipart('testimonial/add', 'id="form_user"'); ?>  
-        <div class="row">
+        <!--div class="row">
             <div class="col-md-3">Nama</div>
             <div class="col-md-9"> 
-                <input class="form-control" id="testimonial_nama" name="testimonial_nama" type="text" size="28"  value="<?php echo set_value('testimonial_nama', ''); ?>" /> 
-                <span class="warning"><?php echo form_error('testimonial_nama'); ?> </span>
+                <input class="form-control" id="testimonial_nama" name="testimonial_nama" type="text" size="28"  value="<?php //echo set_value('testimonial_nama', ''); ?>" /> 
+                <span class="warning"><?php //echo form_error('testimonial_nama'); ?> </span>
             </div> 
-        </div>   
-        <div class="row">
+        </div-->   
+        <div class="row" hidden>
             <div class="col-md-3">Keterangan</div>
             <div class="col-md-9"> 
-                <textarea class="form-control" id="testimonial_ket" name="testimonial_ket" type="text" size="28"  value="<?php echo set_value('testimonial_ket', ''); ?>"> </textarea>
+                <textarea class="form-control" id="testimonial_ket" name="testimonial_ket" type="text" size="28"  value="testimonial"> </textarea>
             </div> 
         </div>  
 		<div class="row">

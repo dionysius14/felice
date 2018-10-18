@@ -105,17 +105,12 @@
                 </div> 
 				<div class="row">
 					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-                        <div class="row well">
+                        <div class="row">
                              <?php foreach($testimonial as $ts){?>
-                                <div class="col-md-6">
-                                    <div style="margin-top:5px" class="col-md-5">
-                                        <img style="width:100%;" src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>">
+                                    <div style="margin-left:35px;margin-top:5px;margin-right:30px" class="col-md-3">
+										<a href="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto;?>" rel="lightbox[gallery]">
+                                        <img style="width:100%;" src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>"></a>
                                     </div>
-                                    <div style="margin-left:20px; margin-top:20px" class="col-md-5">
-                                        <h3 ><?php echo $ts->testimonial_nama; ?></h3>
-                                        <p><?php echo $ts->testimonial_ket; ?></p>
-                                    </div>
-                                </div>
                             <?php } ?>
                         </div>
 							<center><?php echo $this->pagination->create_links(); ?></center>
