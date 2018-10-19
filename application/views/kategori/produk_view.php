@@ -149,7 +149,7 @@
 							<div style="margin-left:10px; margin-right:10px" class="col-md-1">	
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-								<input type="submit" class="btn btn-success" value="Cari">
+								<center><input type="submit" class="btn btn-success" value="Cari"></center>
 							</div>	
 					</div>
 					<?php echo form_close(); ?> 
@@ -167,7 +167,16 @@
 							<div class="main">
 								<div class="work">
 									<a href="<?php echo site_url("produkdetail?id=".$val->produk_id.""); ?>" >
-										<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
+										<figure>
+											<center>
+											<img 
+													style="width:80%; length:80%; margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:10px;"
+													src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" 
+													class="media" 
+													alt=""
+											/>
+											</center>
+										</figure>
 										<div class="caption">
 											<div class="work_title">
 												<h1><?php echo $val->produk_nama; ?></h1>
