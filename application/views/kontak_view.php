@@ -100,31 +100,24 @@
 							<div class="row">
 							<div style="margin-left:32px" class="col-md-5">
 								<h3>
-									<b>Agnes Parcel'n Souvenir</b>
+									<center><b>Agnes Parcel'n Souvenir</b></center>
+
 								</h3>
-								<table>
-									<tr>
-										<td class="col-lg-2">
-										Alamat	
-										</td>
-										<td>
-											: Jalan Brigjend. Katamso No 69 Purwokerto
-										</td>
-									</tr>
-									<tr>
-										<td class="col-lg-2">
-										Telepon  
-										</td>
-										<td>
-											: 081328156789 | 081327109696
-										</td>
-									</tr>
+								<center><h4>Jalan Brigjend. Katamso No 69 Purwokerto<h4></center>
+								<center><b>Telepon : 081328156789 | 081327109696 </b></center>
+								<table style="margin-top:20px; margin-left:30px">
 									<tr>
 										<td align="right" class="col-lg-2">
 										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/bbm.png" class="media" alt=""/>
 										</td>
 										<td>
 											   &nbsp; 5197BE75 | 216E2FF2	
+										</td>
+										<td align="right" class="col-lg-2">
+										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
+										</td>
+										<td>
+											  &nbsp; -	
 										</td>
 									</tr>
 									<tr>
@@ -134,16 +127,6 @@
 										<td>
 											  &nbsp; -	
 										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; -	
-										</td>
-									</tr>
-									<tr>
 										<td align="right" class="col-lg-2">
 										<img  style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/instagram.png" class="media" alt=""/>
 										</td>
