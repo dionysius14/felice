@@ -117,7 +117,7 @@
 										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; -	
+											  &nbsp; <a href="https://www.twitter.com">@twitter</a>
 										</td>
 									</tr>
 									<tr>
@@ -125,13 +125,13 @@
 										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/fb.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; -	
+											  &nbsp; <a href="https://www.facebook.com">Facebook Page</a>	
 										</td>
 										<td align="right" class="col-lg-2">
 										<img  style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/instagram.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; -
+											  &nbsp; <a href="https://www.instagram.com">@instagram</a>
 										</td>
 									</tr>
 									<tr>
@@ -139,7 +139,7 @@
 										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/youtube.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; -	
+											  &nbsp; <a href="https://www.youtube.com">YouTube Page</a>	
 										</td>
 									</tr>
 								</table>
