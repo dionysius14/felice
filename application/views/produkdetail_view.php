@@ -98,33 +98,11 @@
 				<div class="row">
 					<div class="col-lg-11">
 						<div class="row">
-							<div style="margin-left:32px" class="col-md-5">
+							<div style="margin-left:32px" class="col-md-11">
 								<h3>
 									<b>Agnes Parcel'n Souvenir</b>
 								</h3>
-								 <?php 
-								 if(count($produkdetail)>0){
-								 foreach($produkdetail as $val){?>
-								 <div class="col-md-6">						
-									<div class="main">
-										<div class="work">
-												<a href="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto;?>" rel="lightbox[gallery]">
-												<img src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" class="media" alt=""/>
-												<div class="caption">
-													<div style="margin-top:10px" class="work_title">
-														<p><?php echo $produk->produk_deskripsi; ?></p>
-													</div>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-								 <?php }}else{
-									 echo "<center>-- Foto Produk tidak ditemukan --</center>";
-								 } ?>
-							</div>
-							<div style="padding-top:20px;margin-left:32px" class="col-md-6 col-xs-10">
-							<table>
+								<table>
 									<tr>
 										<td class="col-lg-2">
 											<h3 style="padding-left:10px;padding-right:10px;font-size:16px">
@@ -161,8 +139,30 @@
 											</h3>	
 										</td>
 									</tr>
-									
 								</table>
+								 <?php 
+								 if(count($produkdetail)>0){
+								 foreach($produkdetail as $val){?>
+								 <div class="col-md-2">						
+									<div class="main">
+										<div class="work">
+												<a href="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto;?>" rel="lightbox[gallery]">
+												<img src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" class="media" alt=""/>
+												<div class="caption">
+													<div style="margin-top:10px" class="work_title">
+														<p><?php echo $produk->produk_deskripsi; ?></p>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								 <?php }}else{
+									 echo "<center>-- Foto Produk tidak ditemukan --</center>";
+								 } ?>
+							</div>
+							<div style="padding-top:20px;margin-left:32px" class="col-md-6 col-xs-10">
+							
 							</div>
 						</div>
 					</div>
