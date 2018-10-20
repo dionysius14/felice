@@ -19,6 +19,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/slimbox2.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/main.css">
 	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>include_front/js/jquery.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>include_front/js/main.js"></script>
+	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -103,46 +107,38 @@
 									<center><b>Agnes Parcel'n Souvenir</b></center>
 
 								</h3>
-								<center><h4>Jalan Brigjend. Katamso No 69 Purwokerto<h4></center>
-								<center><b>Telepon : 081328156789 | 081327109696 </b></center>
-								<table style="margin-top:20px; margin-left:30px">
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/bbm.png" class="media" alt=""/>
-										</td>
-										<td>
-											   &nbsp; 5197BE75 | 216E2FF2	
-										</td>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; <a href="https://www.twitter.com">@twitter</a>
-										</td>
-									</tr>
+								<center><h4><?php echo $about->alamat; ?><h4></center>
+								<center><b>Telepon : <?php echo $about->phone; ?></b></center>
+								<center><table style="margin-top:20px">
 									<tr>
 										<td align="right" class="col-lg-2">
 										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/fb.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; <a href="https://www.facebook.com">Facebook Page</a>	
+											  &nbsp; <a target="blank" href="<?php echo $about->link_fb; ?>">Facebook</a>	
 										</td>
 										<td align="right" class="col-lg-2">
 										<img  style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/instagram.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; <a href="https://www.instagram.com">@instagram</a>
+											  &nbsp; <a target="blank" href="<?php echo $about->link_ig; ?>">Instagram</a>
 										</td>
 									</tr>
 									<tr>
 										<td align="right" class="col-lg-2">
+										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
+										</td>
+										<td>
+											  &nbsp; <a target="blank" href="<?php echo $about->link_twitter; ?>">Twitter</a>
+										</td>
+										<td align="right" class="col-lg-2">
 										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/youtube.png" class="media" alt=""/>
 										</td>
 										<td>
-											  &nbsp; <a href="https://www.youtube.com">YouTube Page</a>	
+											  &nbsp; <a target="blank" href="<?php echo $about->link_youtube; ?>">YouTube</a>	
 										</td>
 									</tr>
-								</table>
+								</table></center>
 							</div>
 							<div style="padding-top:20px;margin-left:32px" class="col-md-6 col-xs-10">
 							<?php echo form_open('kontak/post'); ?>
@@ -189,6 +185,7 @@
 					</div>
                 </div>
                 </div>
+					<div style="margin-top:5px" id="map"></div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -212,6 +209,66 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+	<script type="text/javascript">
+	jQuery(function($){
+ 
+	var longitude = '<?php echo $about->longitude ?>';
+	var latitude = '<?php echo $about->latitude ?>';
+	var canvas = "map";
+
+	
+	function randing_map(canvas, lan, lat){			
+			var myLatlng = new google.maps.LatLng(lan,lat);
+			var myOptions = {
+						zoom: 18,
+						center: myLatlng,
+						mapTypeId: google.maps.MapTypeId.ROADMAP,
+						maxZoom   : 20,
+    					disableDefaultUI: true
+					}			
+			var map = new google.maps.Map( document.getElementById(canvas), myOptions );
+			var marker = new google.maps.Marker({
+			    position : myLatlng,
+			    map      : map,
+			    icon     : "../../include_front/img/point.png"
+			});
+			var styles = [
+			  {
+			    featureType: "all",
+			    stylers: [
+			      { saturation: -80 }
+			    ]
+			  },{
+			    featureType: "road.arterial",
+			    elementType: "geometry",
+			    stylers: [
+			      { hue: "#00ffee" },
+			      { saturation: 50 }
+			    ]
+			  },{
+			    featureType: "poi.business",
+			    elementType: "labels",
+			    stylers: [
+			      { visibility: "off" }
+			    ]
+			  }
+			];	
+			var infowindow = new google.maps.InfoWindow({
+				content:"Agnes Parcel'n Souvenir"
+			});	
+			
+			map.setOptions({styles: styles});
+
+			/* google.maps.event.addListener(marker, 'click', function() {
+			  infowindow.open(map,marker);
+			}); */
+			infowindow.open(map,marker);
+			
+	}
+	randing_map(canvas, longitude, latitude);
+
+});
+	</script>
 
 </body>
 

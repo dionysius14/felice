@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class data_about extends CI_Controller {
+class Data_about extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -40,8 +40,10 @@ class data_about extends CI_Controller {
             $temp['datamodel'] = $tmp->about_id;
             $temp['link_fb'] = $tmp->link_fb;
             $temp['link_ig'] = $tmp->link_ig;
-            $temp['link_ig_2'] = $tmp->link_ig_2;
-            $temp['link_ig_3'] = $tmp->link_ig_3;
+            $temp['phone'] = $tmp->phone;
+            $temp['alamat'] = $tmp->alamat;
+            $temp['latitude'] = $tmp->latitude;
+            $temp['longitude'] = $tmp->longitude;
             $temp['link_youtube'] = $tmp->link_youtube;
             $temp['link_twitter'] = $tmp->link_twitter;
             $temp['about_ket'] = $tmp->about_ket;
@@ -64,8 +66,10 @@ class data_about extends CI_Controller {
             $temp['datamodel'] = $tmp->about_id;
             $temp['link_fb'] = $tmp->link_fb;
             $temp['link_ig'] = $tmp->link_ig;
-			 $temp['link_ig_2'] = $tmp->link_ig_2;
-            $temp['link_ig_3'] = $tmp->link_ig_3;
+            $temp['phone'] = $tmp->phone;
+            $temp['alamat'] = $tmp->alamat;
+            $temp['latitude'] = $tmp->latitude;
+            $temp['longitude'] = $tmp->longitude;
             $temp['link_youtube'] = $tmp->link_youtube;
             $temp['link_twitter'] = $tmp->link_twitter;
             $temp['about_ket'] = $tmp->about_ket;
@@ -82,8 +86,10 @@ class data_about extends CI_Controller {
         $dataData = array(
             'link_fb' => urldecode($_POST['link_fb']),
             'link_ig' => urldecode($_POST['link_ig']),
-            'link_ig_2' => urldecode($_POST['link_ig_2']),
-            'link_ig_3' => urldecode($_POST['link_ig_3']),
+            'phone' => urldecode($_POST['phone']),
+            'alamat' => urldecode($_POST['alamat']),
+            'latitude' => urldecode($_POST['latitude']),
+            'longitude' => urldecode($_POST['longitude']),
             'link_youtube' => urldecode($_POST['link_youtube']),
             'link_twitter' => urldecode($_POST['link_twitter']),
             'about_tgl_input' => date("y-m-d"),
@@ -94,38 +100,10 @@ class data_about extends CI_Controller {
         return $dataData;
     }
 
-    // public function add() {
-        // $this->lib->check_session();
-        // $temp = '0';
-        // $this->form_validation->set_rules('kategori_id', 'Kategori', 'check_selected');
-        // $this->form_validation->set_rules('produk_nama', 'Nama Produk', 'required|max_length[255]');
-        // $this->form_validation->set_rules('produk_deskripsi', 'Deskripsi Produk', 'required|max_length[255]');
-        // $this->form_validation->set_rules('produk_ket', 'Nama Produk', 'max_length[255]');
-        // $error = '';
-        // if (isset($_POST['simpan'])) {
-            // if ($this->form_validation->run() == FALSE) {
-                // $data['tambah'] = 'tambah';
-                // $data['error'] = 'error';
-                // $this->load->view('kategori/data_produk_view', $data);
-            // } else {
-				 // $dataData = $this->get_array();
-                // $this->lib->log("Tambah");
-                // $temp = $this->about_model->insert($dataData);
-                // if ($temp == '1') {
-                    // $this->session->set_userdata("error", "Simpan Berhasil");
-                    // redirect('kategori/data_produk/');
-                // } else
-                    // echo "insert Gagal";
-            // }
-        // }
-    // }
-
     public function edit() {
         $this->lib->check_session();
         $this->form_validation->set_rules('link_fb', 'Link Facebook', 'required|max_length[255]');
         $this->form_validation->set_rules('link_ig', 'Link Instagram', 'required|max_length[255]');
-        $this->form_validation->set_rules('link_ig_2', 'Link Instagram', 'required|max_length[255]');
-        $this->form_validation->set_rules('link_ig_3', 'Link Instagram', 'required|max_length[255]');
         $this->form_validation->set_rules('link_youtube', 'Link Youtube', 'required|max_length[255]');
         $this->form_validation->set_rules('link_twitter', 'Link Twitter', 'required|max_length[255]');
         if (isset($_POST['ubah'])) {
@@ -150,20 +128,5 @@ class data_about extends CI_Controller {
             
         }
     }
-
-    // public function delete() {
-        // $this->lib->check_session();
-        // $produk_id = $_POST["datamodel"];
-        // $temp = "0";
-        // $data['permanent'] = $this->lib->cek_permanent("data_produk", "produk_id", $_POST['datamodel']);
-        // if ($data['permanent']->num_rows() == 1) {
-            // $temp = "2";
-        // } else {
-            // $this->lib->log("Hapus");
-            // $this->about_model->delete_semu($produk_id);
-            // $temp = '1';
-        // }
-        // echo $temp;
-    // }
 
 }

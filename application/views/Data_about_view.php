@@ -78,6 +78,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								var arr = JSON.parse(result);
 										$('#link_fb').val(arr[0].link_fb);
 										$('#link_ig').val(arr[0].link_ig);
+										$('#phone').val(arr[0].phone);
+										$('#alamat').val(arr[0].alamat);
+										$('#latitude').val(arr[0].latitude);
+										$('#longitude').val(arr[0].longitude);
 										$('#link_youtube').val(arr[0].link_youtube);
 										$('#link_twitter').val(arr[0].link_twitter);
 										$('#about_ket').val(arr[0].about_ket);
@@ -196,20 +200,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-12">
                                 <table ng-table="tableParams"  class="table table-striped ng-table-responsive" export-csv="csv">
                                     <tr ng-repeat="(datamodel, about) in $data | filter:about.about_nama as results" ng-class="{ 'emphasis': about.about_nama == '<?php echo $this->session->userdata("about_nama") ?>'}">
-                                        <td class="col-md-1 borderkanan" data-title="'Link Facebook'" sortable="'link_fb'">
-                                            <span id="link_fb{{$index}}" >{{about.link_fb}}</span>
+                                        <td class="col-md-3 borderkanan" data-title="'Link Social '" sortable="'link_fb'">
+											<b>Facebook : </b><br/>
+                                            <span id="link_fb{{$index}}" >{{about.link_fb}}</span><br/>
+											<b>Instagram :</b><br/>
+											<span id="link_ig{{$index}}" >{{about.link_ig}}</span><br/>
+											<b>Youtube :</b><br/>
+											<span id="link_youtube{{$index}}" >{{about.link_youtube}}</span><br/>
+											<b>Twitter :</b><br/>
+											<span id="link_youtube{{$index}}" >{{about.link_twitter}}</span>
                                         </td> 
-										<td class="col-md-1 borderkanan" data-title="'Link Instagram #1'" sortable="'link_ig'">
-                                            <span id="link_ig{{$index}}" >{{about.link_ig}}</span>
+										<td class="col-md-1 borderkanan" data-title="'Telepon'" sortable="'phone'">
+                                            <span id="phone{{$index}}" >{{about.phone}}</span>
                                         </td> 
-											<td class="col-md-1 borderkanan" data-title="'Link Instagram #2'" sortable="'link_ig_2'">
-                                            <span id="link_ig_2{{$index}}" >{{about.link_ig_2}}</span>
+											<td class="col-md-1 borderkanan" data-title="'Latitude/Longitude'" sortable="'latitude'">
+                                            <span id="latitude{{$index}}" ><b>Latitude :</b>{{about.latitude}}</span><br/>
+                                            <span id="latitude{{$index}}" ><b>Longitude :</b>{{about.longitude}}</span>
                                         </td> 
-											<td class="col-md-1 borderkanan" data-title="'Link Instagram #3'" sortable="'link_ig_3'">
-                                            <span id="link_ig_3{{$index}}" >{{about.link_ig_3}}</span>
-                                        </td> 
-										 <td class="col-md-1 borderkanan" data-title="'Link Youtube'" sortable="'link_youtube'">
-                                            <span id="link_youtube{{$index}}" >{{about.link_youtube}}</span>
+											<td class="col-md-3 borderkanan" data-title="'Alamat'" sortable="'alamat'">
+                                            <span id="alamat{{$index}}" >{{about.alamat}}</span>
                                         </td> 
 										 <td class="col-md-3 borderkanan" data-title="'Keterangan'" sortable="'about_ket'">
                                             <span id="about_ket{{$index}}" >{{about.about_ket}}</span>

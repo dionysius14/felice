@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class kontak extends CI_Controller {
+class Kontak extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -12,7 +12,8 @@ class kontak extends CI_Controller {
     }
 	
     public function index() {
-        $this->load->view('kontak_view');
+		$data['about'] = $this->db->query('SELECT * FROM about_us ')->row();
+        $this->load->view('kontak_view',$data);
     }
 	public function Post(){ 
 		

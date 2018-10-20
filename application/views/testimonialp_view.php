@@ -103,19 +103,29 @@
                         </center>
                     </div>  
                 </div> 
-				<div class="row">
-					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
-                        <div class="row">
-                             <?php foreach($testimonial as $ts){?>
-                                    <div style="margin-left:35px;margin-top:5px;margin-right:30px" class="col-md-3">
-										<a href="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto;?>" rel="lightbox[gallery]">
-                                        <img style="width:100%;" src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>"></a>
-                                    </div>
-                            <?php } ?>
-                        </div>
-							<center><?php echo $this->pagination->create_links(); ?></center>
+					<div class="row">
+								 <?php foreach($testimonial as $ts){?>
+						 <div class="col-md-3">						
+							<div class="main">
+								<div class="work">
+									<a href="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto;?>" rel="lightbox[gallery]">
+										<figure>
+											<center>
+											<img 	
+													style="width:80%; length:80%; margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:10px;"
+													src="<?php echo base_url(); ?>include_front/img/testimonial/<?php echo $ts->testimonial_foto; ?>" 
+													class="media" 
+													alt=""
+											/>
+											</center>
+										</figure>
+									</a>
+								</div>
+							</div>
 						</div>
+						 <?php } ?>
 					</div>
+							<center><?php echo $this->pagination->create_links(); ?></center>
                 </div>
                 </div>
             </div>

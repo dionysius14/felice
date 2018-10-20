@@ -177,14 +177,14 @@
 											/>
 											</center>
 										</figure>
-										<div class="caption">
+										<!--div class="caption">
 											<div class="work_title">
-												<h1><?php echo $val->produk_nama; ?></h1>
+												<h1><?php //echo $val->produk_nama; ?></h1>
 												<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
-												<?php echo $val->produk_deskripsi; ?>
+												<?php //echo $val->produk_deskripsi; ?>
 												</h4>
 											</div>
-										</div>
+										</div-->
 									</a>
 								</div>
 								<center><?php echo $val->produk_nama; ?></center>

@@ -21,17 +21,10 @@
             </div> 
         </div>
 <div class="row">
-            <div class="col-md-3">Link Instagram #2</div>
+            <div class="col-md-3">Telepon</div>
             <div class="col-md-9"> 
-                <input class="form-control" id="link_ig_2" name="link_ig_2" type="text" size="28"  value="<?php echo set_value('link_ig_2', ''); ?>" /> 
-                <span class="warning"><?php echo form_error('link_ig_2'); ?> </span>
-            </div> 
-        </div>
-<div class="row">
-            <div class="col-md-3">Link Instagram #3</div>
-            <div class="col-md-9"> 
-                <input class="form-control" id="link_ig_3" name="link_ig_3" type="text" size="28"  value="<?php echo set_value('link_ig_3', ''); ?>" /> 
-                <span class="warning"><?php echo form_error('link_ig_3'); ?> </span>
+                <input class="form-control" id="phone" name="phone" type="text" size="28"  value="<?php echo set_value('phone', ''); ?>" /> 
+                <span class="warning"><?php echo form_error('phone'); ?> </span>
             </div> 
         </div>		
 		<div class="row">
@@ -48,6 +41,27 @@
                 <span class="warning"><?php echo form_error('link_twitter'); ?> </span>
             </div> 
         </div> 
+		<div class="row">
+            <div class="col-md-3">Alamat</div>
+            <div class="col-md-9"> 
+                <input class="form-control" id="alamat" name="alamat" type="text" size="28"  value="<?php echo set_value('alamat', ''); ?>" /> 
+                <span class="warning"><?php echo form_error('alamat'); ?> </span>
+            </div> 
+        </div>
+		<div class="row">
+            <div class="col-md-3">Latitude</div>
+            <div class="col-md-9"> 
+                <input class="form-control" id="latitude" name="latitude" type="text" size="28"  value="<?php echo set_value('latitude', ''); ?>" /> 
+                <span class="warning"><?php echo form_error('latitude'); ?> </span>
+            </div> 
+        </div>
+		<div class="row">
+            <div class="col-md-3">Longitude</div>
+            <div class="col-md-9"> 
+                <input class="form-control" id="longitude" name="longitude" type="text" size="28"  value="<?php echo set_value('longitude', ''); ?>" /> 
+                <span class="warning"><?php echo form_error('longitude'); ?> </span>
+            </div> 
+        </div>
 		<div class="row">
             <div class="col-md-3">About Us</div>
             <div class="col-md-9"> 

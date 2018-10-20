@@ -187,11 +187,16 @@
 					<?php } ?> 
 					</div>
 				</div>
+                 <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
+                    <div style="margin-top:5px" class="col-md-11">
+                        <center>
+                            <h1><font face="Times">About Us</font></h1>
+                        </center>
+                    </div>  
+                </div> 
 				<div class="row">
-                    <div style="margin-left:-45px" class="col-lg-12">
-						<div class="main col-lg-12" id="map">
-							
-						</div>
+					<div style="margin-left:32px;margin-right:32px" class="col-md-11">
+						<p align="justify"><?php echo $about->about_ket; ?></p>
                     </div>
                 </div>
                 </div>
