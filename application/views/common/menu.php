@@ -25,13 +25,12 @@ $akses = $this->script_sql->get_data_row($table, $join, $where, $order_by, $grou
                 <li class=""><a  class="menu" href="<?php echo site_url("dashboard"); ?>"><img src="<?php echo base_url(); ?>include/img/home.png"/>&nbsp;&nbsp;Home</a></li>
 				<li class=""><a  class="menu" href="<?php echo site_url("kategori/kategori/show"); ?>"><img src="<?php echo base_url(); ?>include/img/stok.png"/>&nbsp;&nbsp;Data Kategori Produk</a></li>
 				<li class=""><a  class="menu" href="<?php echo site_url("kategori/data_produk/show"); ?>"><img src="<?php echo base_url(); ?>include/img/produk.png"/>&nbsp;&nbsp;Data Produk</a></li>
-				<li class=""><a  class="menu" href="<?php echo site_url("kontak/show"); ?>"><img src="<?php echo base_url(); ?>include/img/inbox.png"/>&nbsp;&nbsp;Data Kontak</a></li>
+				<li class=""><a  class="menu" href="<?php echo site_url("data_about/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;About Us dan Kontak</a></li>
 				<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;Konten&nbsp;<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-						<li class=""><a  class="menu" href="<?php echo site_url("data_about/show"); ?>"><img src="<?php echo base_url(); ?>include/img/link.png"/>&nbsp;&nbsp;Data Link Social Media</a></li>
 						<li class=""><a  class="menu" href="<?php echo site_url("faq/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;FAQ</a></li>
 						<li class=""><a  class="menu" href="<?php echo site_url("howto/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;How to Order</a></li>
 						<li class=""><a  class="menu" href="<?php echo site_url("testimonial/show"); ?>"><img src="<?php echo base_url(); ?>include/img/system.png"/>&nbsp;&nbsp;Testimonial</a></li>
