@@ -8,10 +8,13 @@ class Kontak extends CI_Controller {
         parent::__construct();
         // Model template
 		$this->load->model('kontak_model');
+		$this->load->model('kategori_model');
         // Place your model here...
     }
 	
     public function index() {
+		$data['select'] = '1';
+		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();
 		$data['about'] = $this->db->query('SELECT * FROM about_us ')->row();
         $this->load->view('kontak_view',$data);
     }

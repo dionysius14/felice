@@ -201,6 +201,7 @@ class Data_produk extends CI_Controller {
 													'kategori_id' => urldecode($_POST['kategori_id']),
 													'produk_nama' => urldecode($_POST['produk_nama']),
 													'produk_deskripsi' => urldecode($_POST['produk_deskripsi']),
+													'produk_harga' => urldecode($_POST['produk_harga']),
 													'produk_tgl_input' => date("y-m-d"),
 													// 'produk_ket' => urldecode($_POST['produk_ket']),
 													'last_update' => date("y-m-d h:i:s"),

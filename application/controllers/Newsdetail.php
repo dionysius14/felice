@@ -22,10 +22,13 @@ class Newsdetail extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('news_model');
+		$this->load->model('kategori_model');
     }
 
     public function index() {
+		$data['select'] = '1';
         $this->session->set_userdata("last_url", "home");
+		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();	
         $common['title'] = 'Newsdetail';
 		$id = $this->input->get('id');
         $data['newsdetail'] = $this->news_model->get_newsbyid($id);

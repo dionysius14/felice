@@ -30,6 +30,13 @@
                 <span class="warning"><?php echo form_error('produk_nama'); ?> </span>
             </div> 
         </div> 
+        <div class="row">
+            <div class="col-md-3 padding_top">Harga</div>
+            <div class="col-md-9"> 
+                <input class="form-control" id="produk_harga" name="produk_harga" type="number" size="28"  value="<?php echo set_value('produk_harga', ''); ?>" /> 
+                <span class="warning"><?php echo form_error('produk_harga'); ?> </span>
+            </div> 
+        </div> 
 		<div class="row">
             <div class="col-md-3 padding_top">Deskripsi Produk</div>
             <div class="col-md-9"> 

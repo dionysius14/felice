@@ -9,12 +9,15 @@ class Newsp extends CI_Controller {
         // Model template 
         $this->load->model('news_model');
         $this->load->model('data_profile');
+		$this->load->model('kategori_model');
         $this->load->library('pagination');
         // Place your model here...
     }
 
     public function index() {
+		$data['select'] = '1';
 		$config['base_url'] = site_url('newsp/index/');
+		$data['get_all_kategori'] = $this->kategori_model->get_all_kategori();	
         $rows = $this->db->query('SELECT * FROM data_news ORDER BY news_date DESC')->result();
         $config['total_rows'] = count($rows);
         $config['per_page'] = 5;

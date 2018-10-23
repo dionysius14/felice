@@ -121,27 +121,21 @@
                 </li>
                 <li>
                     <a href="#">Produk</a>
-					 <ul class="submenu" style="overflow:auto;height:350px">
-							<li><a href="<?php echo site_url('kategori/produk/index/1');?>">Acrylic</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/2');?>">Bantal</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/3');?>">Gantungan</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/4');?>">Gelas & Mug</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/5');?>" >Handuk</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/6');?>">Kipas</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/7');?>">Paketan</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/8');?>">Plakat</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/9');?>">Pouch</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/10');?>">Tas</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/11');?>">Tempat Cincin</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/12');?>">Tempat Gula</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/13');?>">Tempat Lada</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/14');?>">Tempat Lilin</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/15');?>">Tempat Tisue</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/16');?>">Tempat Pensil</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/17');?>">Teplok</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/18');?>">Toples</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/19');?>">Tumbler</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/20');?>">Undangan</a></li>
+					<ul class="submenu" style="overflow:auto;height:350px">
+						<?php
+						if(!empty($get_all_kategori))
+						{
+							foreach($get_all_kategori as $val)
+							{
+							$true="";
+							if($select==$val->kategori_id)
+							$true="selected";
+							
+							?>
+							<li><a href="<?php echo site_url('kategori/produk/index/'.$val->kategori_id.'');?>" <?php echo $true; ?>><?php echo $val->kategori_nama;?></a></li>
+							<?php 
+							}
+						}?>
 					</ul>
                 </li>
                	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>

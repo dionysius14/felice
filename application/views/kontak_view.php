@@ -18,17 +18,6 @@
     <link href="<?php echo base_url(); ?>include_front/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/slimbox2.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>include_front/css/main.css">
-	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>include_front/js/jquery.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>include_front/js/main.js"></script>
-	<script src="<?php echo base_url(); ?>include_front/js/main.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -50,27 +39,21 @@
                 </li>
                 <li>
                     <a href="#">Produk</a>
-					 <ul class="submenu" style="overflow:auto;height:350px">
-							<li><a href="<?php echo site_url('kategori/produk/index/1');?>">Acrylic</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/2');?>">Bantal</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/3');?>">Gantungan</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/4');?>">Gelas & Mug</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/5');?>" >Handuk</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/6');?>">Kipas</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/7');?>">Paketan</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/8');?>">Plakat</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/9');?>">Pouch</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/10');?>">Tas</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/11');?>">Tempat Cincin</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/12');?>">Tempat Gula</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/13');?>">Tempat Lada</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/14');?>">Tempat Lilin</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/15');?>">Tempat Tisue</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/16');?>">Tempat Pensil</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/17');?>">Teplok</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/18');?>">Toples</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/19');?>">Tumbler</a></li>
-							<li><a href="<?php echo site_url('kategori/produk/index/20');?>">Undangan</a></li>
+					<ul class="submenu" style="overflow:auto;height:350px">
+						<?php
+						if(!empty($get_all_kategori))
+						{
+							foreach($get_all_kategori as $val)
+							{
+							$true="";
+							if($select==$val->kategori_id)
+							$true="selected";
+							
+							?>
+							<li><a href="<?php echo site_url('kategori/produk/index/'.$val->kategori_id.'');?>" <?php echo $true; ?>><?php echo $val->kategori_nama;?></a></li>
+							<?php 
+							}
+						}?>
 					</ul>
                 </li>
                	<li><a href="<?php echo site_url('howtop/index');?>">How To Order</a></li>
@@ -185,7 +168,44 @@
 					</div>
                 </div>
                 </div>
-					<div style="margin-top:5px" id="map"></div>
+					<div id="map" style="width:100%;height:400px;margin-top:10px;"></div>
+
+<script>
+function myMap() {
+        // The location of GB
+        var gb = {lat: 0.4920993, lng: 101.4842535};
+        // The map, centered at GB
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 18, center: gb, mapTypeId: google.maps.MapTypeId.ROADMAP});
+        // The marker, positioned at GB
+        //var iconBase = '<?//= base_url() . 'assets/theme/default/images/'?>//';
+        var marker = new google.maps.Marker({
+            position: gb,
+            map: map,
+            // icon: iconBase + 'marker1.png',
+            title: "Nurani Jaya"
+        });
+
+        var content = '<div>Agnes Parcel n Souvenir</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: content,
+            maxWidth: 350
+        });
+        // When this event is fired the Info Window is opened.
+        google.maps.event.addListener(marker, 'click', function () {
+            infowindow.open(map, marker);
+        });
+
+        google.maps.event.addListener(map, 'click', function () {
+            infowindow.close();
+        });
+        infowindow.open(map, marker);
+        google.maps.event.addDomListener(window, 'load', initMap);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7sMs4pf-OWid7m8jPSrlcAMDzd2kOc6s&callback=myMap"></script>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -209,67 +229,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-	<script type="text/javascript">
-	jQuery(function($){
- 
-	var longitude = '<?php echo $about->longitude ?>';
-	var latitude = '<?php echo $about->latitude ?>';
-	var canvas = "map";
-
-	
-	function randing_map(canvas, lan, lat){			
-			var myLatlng = new google.maps.LatLng(lan,lat);
-			var myOptions = {
-						zoom: 18,
-						center: myLatlng,
-						mapTypeId: google.maps.MapTypeId.ROADMAP,
-						maxZoom   : 20,
-    					disableDefaultUI: true
-					}			
-			var map = new google.maps.Map( document.getElementById(canvas), myOptions );
-			var marker = new google.maps.Marker({
-			    position : myLatlng,
-			    map      : map,
-			    icon     : "../../include_front/img/point.png"
-			});
-			var styles = [
-			  {
-			    featureType: "all",
-			    stylers: [
-			      { saturation: -80 }
-			    ]
-			  },{
-			    featureType: "road.arterial",
-			    elementType: "geometry",
-			    stylers: [
-			      { hue: "#00ffee" },
-			      { saturation: 50 }
-			    ]
-			  },{
-			    featureType: "poi.business",
-			    elementType: "labels",
-			    stylers: [
-			      { visibility: "off" }
-			    ]
-			  }
-			];	
-			var infowindow = new google.maps.InfoWindow({
-				content:"Agnes Parcel'n Souvenir"
-			});	
-			
-			map.setOptions({styles: styles});
-
-			/* google.maps.event.addListener(marker, 'click', function() {
-			  infowindow.open(map,marker);
-			}); */
-			infowindow.open(map,marker);
-			
-	}
-	randing_map(canvas, longitude, latitude);
-
-});
-	</script>
-
 </body>
 
 </html>
