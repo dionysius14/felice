@@ -34,7 +34,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                 <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+                 <li style="background:#FFF0F5; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
@@ -92,7 +92,7 @@
                 <div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
                     <div style="margin-top:5px" class="col-md-11">
                         <center>
-                            <h1><font face="Times">Tata Cara Order</font></h1>
+                            <h1><font face="Comic Sans MS">Tata Cara Order</font></h1>
                         </center>
                     </div>  
                 </div>
@@ -101,7 +101,7 @@
 						<?php
 									$index = 1;
 									foreach ($howto as $ht) {
-									?><p style="font-size:120%;"><img src="<?php echo base_url(); ?>include/img/verifikasi.png" />&nbsp;<b>Step <?php echo $index ?> :</b>
+									?><p style="font-size:120%;margin-top:20px"><img src="<?php echo base_url(); ?>include/img/verifikasi.png" />&nbsp;<b>Step <?php echo $index ?> :</b>
 									 <?php echo $ht->howto_step ?></p>
 						<?php
 							$index++;}

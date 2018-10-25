@@ -34,7 +34,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                 <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+                 <li style="background:#FFF0F5; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
@@ -94,7 +94,7 @@
 						<div class="row">
 							<div style="margin-left:32px" class="col-md-11">
 								<h3>
-									<b>Agnes Parcel'n Souvenir</b>
+									<font face="Comic Sans MS">Agnes Parcel'n Souvenir</font>
 								</h3>
 								<table>
 									<tr>
@@ -137,16 +137,21 @@
 								 <?php 
 								 if(count($produkdetail)>0){
 								 foreach($produkdetail as $val){?>
-								 <div class="col-md-2">						
+								 <div class="col-md-3">						
 									<div class="main">
 										<div class="work">
 												<a href="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto;?>" rel="lightbox[gallery]">
-												<img src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" class="media" alt=""/>
-												<div class="caption">
-													<div style="margin-top:10px" class="work_title">
-														<p><?php echo $produk->produk_deskripsi; ?></p>
-													</div>
-												</div>
+												
+												<figure>
+													<center>
+													<img 	
+															style="width:80%; length:80%; margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:10px;"
+															src="<?php echo base_url(); ?>include_front/img/produk/detail/<?php echo $val->foto; ?>" 
+															class="media" 
+															alt=""
+													/>
+													</center>
+												</figure>
 											</a>
 										</div>
 									</div>

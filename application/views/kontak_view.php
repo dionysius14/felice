@@ -27,7 +27,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                 <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+                 <li style="background:#FFF0F5; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
@@ -87,7 +87,7 @@
 							<div class="row">
 							<div style="margin-left:32px" class="col-md-5">
 								<h3>
-									<center><b>Agnes Parcel'n Souvenir</b></center>
+									<center><font face="Comic Sans MS">Agnes Parcel'n Souvenir</font></center>
 
 								</h3>
 								<center><h4><?php echo $about->alamat; ?><h4></center>
@@ -105,20 +105,6 @@
 										</td>
 										<td>
 											  &nbsp; <a target="blank" href="<?php echo $about->link_ig; ?>">Instagram</a>
-										</td>
-									</tr>
-									<tr>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/twitter.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; <a target="blank" href="<?php echo $about->link_twitter; ?>">Twitter</a>
-										</td>
-										<td align="right" class="col-lg-2">
-										<img style="padding-top:5px" src="<?php echo base_url(); ?>include_front/img/youtube.png" class="media" alt=""/>
-										</td>
-										<td>
-											  &nbsp; <a target="blank" href="<?php echo $about->link_youtube; ?>">YouTube</a>	
 										</td>
 									</tr>
 								</table></center>

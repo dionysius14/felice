@@ -68,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             if (result != "[]")
                             {
                             var arr = JSON.parse(result);
+                                    $('#howto_sort').val(arr[0].howto_sort);
                                     $('#howto_step').val(arr[0].howto_step);
                                     $('#datamodel').val(arr[0].datamodel);
                                     $('#button').attr("name", "ubah");
@@ -193,6 +194,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <tr ng-repeat="(datamodel, howto) in $data | filter:howto.user_name as results" ng-class="{ 'emphasis': howto.role_nama == '<?php echo $this->session->userdata("role_nama") ?>'}">
                                         <td class="howto" data-title="'How to Order'" sortable="'howto'">
                                             <span id="user_name_{{$index}}" >{{howto.howto_step}}</span>
+                                        </td> 
+                                        <td class="howto_sort" data-title="'Sort'" sortable="'howto_sort'">
+                                            <span id="user_name_{{$index}}" >{{howto.howto_sort}}</span>
                                         </td> 
                                         <td class="action" data-title="'Actions'" >
                                     <center><a href="" id="howto-{{$index}}" datamodel={{howto.datamodel}} class="btn btn-default btn-xs" onclick="form_edit(this)"><img src="<?php echo base_url(); ?>include/img/edit.png" /></a>   

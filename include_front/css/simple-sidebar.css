@@ -28,6 +28,7 @@
     margin-left: -250px;
     overflow-y: auto;
      background: #fff url("../img/bunga.png")  repeat-y left bottom;
+	 background-color: #FFF0F5;
 	  background-attachment: fixed;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;

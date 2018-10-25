@@ -6,9 +6,15 @@
     <div class="pdiv">
         <?php echo form_open('howto/add', 'id="form_user"'); ?>  
         <div class="row">
-            <div class="col-md-3">How to Orde</div>
+            <div class="col-md-3">How to Order</div>
             <div class="col-md-9"> 
                 <textarea class="form-control" id="howto_step" name="howto_step" type="text" size="28"  value="<?php echo set_value('howto_step', ''); ?>"> </textarea>
+            </div> 
+        </div>  
+        <div class="row">
+            <div class="col-md-3">Sort</div>
+            <div class="col-md-9"> 
+               <input class="form-control" id="howto_sort" name="howto_sort" type="text" size="28"  value="<?php echo set_value('howto_sort', ''); ?>" /> 
             </div> 
         </div>  
         <div class="row" hidden> 

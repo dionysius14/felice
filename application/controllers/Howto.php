@@ -41,6 +41,7 @@ class Howto extends CI_Controller {
         foreach ($howto as $tmp) {
             $temp['index'] = $index;
             $temp['datamodel'] = $tmp->howto_id;
+            $temp['howto_sort'] = $tmp->howto_sort;
             $temp['howto_step'] = $tmp->howto_step;
             $temp['is_delete'] = $tmp->is_delete;
             array_push($array, $temp);
@@ -58,6 +59,7 @@ class Howto extends CI_Controller {
 
             $temp['index'] = $index;
             $temp['datamodel'] = $tmp->howto_id;
+            $temp['howto_sort'] = $tmp->howto_sort;
             $temp['howto_step'] = $tmp->howto_step;
             $temp['is_delete'] = $tmp->is_delete;
             array_push($array, $temp);
@@ -66,9 +68,10 @@ class Howto extends CI_Controller {
         echo json_encode($array);
     }
 
-    public function get_array($howto_step = "") {
+    public function get_array($howto_step = "",$howto_sort = "") {
         $this->lib->check_session();
         $dataData = array(
+            'howto_sort' => urldecode($howto_sort),
             'howto_step' => urldecode($howto_step),
             'last_update' => date("y-m-d h:i:s"),
             'last_user_id' => $this->session->userdata("user_id")
@@ -79,10 +82,11 @@ class Howto extends CI_Controller {
     public function add() {
         $this->lib->check_session();
         $temp = '0';
-        $dataData = $this->get_array($_POST['howto_step']);
+        $dataData = $this->get_array($_POST['howto_step'],$_POST['howto_sort']);
         if (isset($_POST['datamodel']))
             $user_id = $_POST['datamodel'];
-        $this->form_validation->set_rules('howto_step', 'Nama', 'required');
+        $this->form_validation->set_rules('howto_sort', 'Sort', 'required');
+        $this->form_validation->set_rules('howto_step', 'Step', 'required');
         $error = '';
         if (isset($_POST['simpan'])) {
             if ($this->form_validation->run() == FALSE) {
@@ -103,7 +107,8 @@ class Howto extends CI_Controller {
 
     public function edit() {
         $this->lib->check_session();
-        $this->form_validation->set_rules('howto_step', 'Nama', 'required');
+        $this->form_validation->set_rules('howto_step', 'Step', 'required');
+        $this->form_validation->set_rules('howto_sort', 'Sort', 'required');
         $error = '';
         if (isset($_POST['ubah'])) {
             if ($this->form_validation->run() == FALSE) {
@@ -111,7 +116,7 @@ class Howto extends CI_Controller {
                 $data['error'] = 'error';
                 $this->load->view('howto_view', $data);
             } else {
-                    $dataData = $this->get_array($_POST['howto_step']);
+                    $dataData = $this->get_array($_POST['howto_step'],$_POST['howto_sort']);
 
                     $temp = $this->howto_model->update($_POST['datamodel'], $dataData);
                     $this->lib->log("Edit");

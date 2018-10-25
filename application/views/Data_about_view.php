@@ -82,8 +82,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										$('#alamat').val(arr[0].alamat);
 										$('#latitude').val(arr[0].latitude);
 										$('#longitude').val(arr[0].longitude);
-										$('#link_youtube').val(arr[0].link_youtube);
-										$('#link_twitter').val(arr[0].link_twitter);
 										$('#about_ket').val(arr[0].about_ket);
 										$('#datamodel').val(arr[0].datamodel);
 										$('#button').attr("name", "ubah");
@@ -205,10 +203,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <span id="link_fb{{$index}}" >{{about.link_fb}}</span><br/>
 											<b>Instagram :</b><br/>
 											<span id="link_ig{{$index}}" >{{about.link_ig}}</span><br/>
-											<b>Youtube :</b><br/>
-											<span id="link_youtube{{$index}}" >{{about.link_youtube}}</span><br/>
-											<b>Twitter :</b><br/>
-											<span id="link_youtube{{$index}}" >{{about.link_twitter}}</span>
                                         </td> 
 										<td class="col-md-1 borderkanan" data-title="'Telepon'" sortable="'phone'">
                                             <span id="phone{{$index}}" >{{about.phone}}</span>

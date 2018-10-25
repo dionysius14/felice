@@ -26,21 +26,7 @@
                 <input class="form-control" id="phone" name="phone" type="text" size="28"  value="<?php echo set_value('phone', ''); ?>" /> 
                 <span class="warning"><?php echo form_error('phone'); ?> </span>
             </div> 
-        </div>		
-		<div class="row">
-            <div class="col-md-3">Link Youtube</div>
-            <div class="col-md-9"> 
-                <input class="form-control" id="link_youtube" name="link_youtube" type="text" size="28"  value="<?php echo set_value('link_youtube', ''); ?>" /> 
-                <span class="warning"><?php echo form_error('link_youtube'); ?> </span>
-            </div> 
-        </div> 
-		<div class="row">
-            <div class="col-md-3">Link Twitter</div>
-            <div class="col-md-9"> 
-                <input class="form-control" id="link_twitter" name="link_twitter" type="text" size="28"  value="<?php echo set_value('link_twitter', ''); ?>" /> 
-                <span class="warning"><?php echo form_error('link_twitter'); ?> </span>
-            </div> 
-        </div> 
+        </div>	
 		<div class="row">
             <div class="col-md-3">Alamat</div>
             <div class="col-md-9"> 

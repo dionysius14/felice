@@ -9,6 +9,7 @@ class Howto_model extends CI_Model {
 		$this->db->select();
         $this->db->from('howto u');
         $this->db->where('u.is_delete', '0');
+        $this->db->order_by('howto_sort', 'ASC');
 		$query = $this->db->get();
 		return $query->result() ;
 	} 

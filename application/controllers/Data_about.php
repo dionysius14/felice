@@ -44,8 +44,6 @@ class Data_about extends CI_Controller {
             $temp['alamat'] = $tmp->alamat;
             $temp['latitude'] = $tmp->latitude;
             $temp['longitude'] = $tmp->longitude;
-            $temp['link_youtube'] = $tmp->link_youtube;
-            $temp['link_twitter'] = $tmp->link_twitter;
             $temp['about_ket'] = $tmp->about_ket;
             $temp['is_delete'] = $tmp->is_delete;
             $temp['is_permanent'] = $tmp->is_permanent;
@@ -70,8 +68,6 @@ class Data_about extends CI_Controller {
             $temp['alamat'] = $tmp->alamat;
             $temp['latitude'] = $tmp->latitude;
             $temp['longitude'] = $tmp->longitude;
-            $temp['link_youtube'] = $tmp->link_youtube;
-            $temp['link_twitter'] = $tmp->link_twitter;
             $temp['about_ket'] = $tmp->about_ket;
             $temp['is_delete'] = $tmp->is_delete;
             $temp['is_permanent'] = $tmp->is_permanent;
@@ -90,8 +86,6 @@ class Data_about extends CI_Controller {
             'alamat' => urldecode($_POST['alamat']),
             'latitude' => urldecode($_POST['latitude']),
             'longitude' => urldecode($_POST['longitude']),
-            'link_youtube' => urldecode($_POST['link_youtube']),
-            'link_twitter' => urldecode($_POST['link_twitter']),
             'about_tgl_input' => date("y-m-d"),
             'about_ket' => urldecode($_POST['about_ket']),
             'last_update' => date("y-m-d h:i:s"),
@@ -104,8 +98,6 @@ class Data_about extends CI_Controller {
         $this->lib->check_session();
         $this->form_validation->set_rules('link_fb', 'Link Facebook', 'required|max_length[255]');
         $this->form_validation->set_rules('link_ig', 'Link Instagram', 'required|max_length[255]');
-        $this->form_validation->set_rules('link_youtube', 'Link Youtube', 'required|max_length[255]');
-        $this->form_validation->set_rules('link_twitter', 'Link Twitter', 'required|max_length[255]');
         if (isset($_POST['ubah'])) {
             if ($this->form_validation->run() == FALSE) {
                 $data['ubah'] = 'ubah';

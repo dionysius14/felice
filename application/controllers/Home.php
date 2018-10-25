@@ -51,12 +51,12 @@ class Home extends CI_Controller {
 
     public function search(){
         $keyword = $this->input->post('keyword');
-        $min = $this->input->post('min');
-        $max = $this->input->post('max');
-        $sort = $this->input->post('sort');
-        $this->session->set_userdata('min',$min);
-        $this->session->set_userdata('max',$max);
-        $this->session->set_userdata('sort',$sort);
+        // $min = $this->input->post('min');
+        // $max = $this->input->post('max');
+        // $sort = $this->input->post('sort');
+        // $this->session->set_userdata('min',$min);
+        // $this->session->set_userdata('max',$max);
+        // $this->session->set_userdata('sort',$sort);
         $this->session->set_userdata('keyword',$keyword);
         // echo $keyword;
         redirect('search');

@@ -33,7 +33,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-               <li style="background:#fff; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+               <li style="background:#FFF0F5; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
@@ -89,30 +89,30 @@
                     </div>
                 </div> 
 				<div class="row">
-					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
-						<?php echo form_open('home/search', 'id="form_add"'); ?>
+					<!--div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
 							<div style="margin-top:5px" class="col-md-1 col-block">
 								<center>Harga:</center>
 							</div>
 							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-						 		<input type="number" id="min" name="min" value="<?php echo $this->session->userdata('min') ?>" class="form-control" placeholder="Harga Terendah">
+						 		<input type="number" id="min" name="min" value="<?php //echo $this->session->userdata('min') ?>" class="form-control" placeholder="Harga Terendah">
 							</div>
 							<div style="margin-top:5px" class="col-md-1">
 								<center>-</center>
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-						 		<input type="number" id="max" name="max" value="<?php echo $this->session->userdata('max') ?>" class="form-control" placeholder="Harga Tertinggi">
+						 		<input type="number" id="max" name="max" value="<?php //echo $this->session->userdata('max') ?>" class="form-control" placeholder="Harga Tertinggi">
 						 	</div>
 							<div style="margin-top:5px" class="col-md-1 col-block">
 								<center>Sort:</center>
 							</div>	
 							<div style="margin-left:10px; margin-right:10px" class="col-md-4">	
-								<select class="form-control" value="<?php echo $this->session->userdata('sort') ?>" id="sort" name="sort" >
+								<select class="form-control" value="<?php //echo $this->session->userdata('sort') ?>" id="sort" name="sort" >
 								  <option value="up">Harga Tinggi - Rendah [Z-a]</option>
 								  <option value="down">Harga Rendah - Tinggi [A-z]</option>
 								</select>
 							</div>			
-					</div>
+					</div-->
+						<?php echo form_open('home/search', 'id="form_add"'); ?>
 					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
 						 	<div style="margin-top:5px" class="col-md-1 col-block">
 								<center>Cari:</center>
@@ -137,15 +137,16 @@
 							<div class="main">
 								<div class="work">
 									<a href="<?php echo site_url("produkdetail?id=".$val->produk_id.""); ?>" >
-										<img src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" class="media" alt=""/>
-										<div class="caption">
-											<div class="work_title">
-												<h1><?php echo $val->produk_nama; ?></h1>
-												<h4 style="padding-left:10px;padding-right:10px;font-size:16px">
-												<?php echo $val->produk_deskripsi; ?>
-												</h4>
-											</div>
-										</div>
+										<figure>
+											<center>
+											<img 	
+													style="width:80%; length:80%; margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:10px;"
+													src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" 
+													class="media" 
+													alt=""
+											/>
+											</center>
+										</figure>
 									</a>
 								</div>
 								<center><?php echo $val->produk_nama; ?></center>
