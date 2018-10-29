@@ -81,7 +81,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						 <a href="<?php echo site_url('home/index');?>">
-						   <center><img class="banner-news" style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
+						   <center><img class="banner-news" style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.png"/></center>
 						</a>
 					</div>
 				</div>

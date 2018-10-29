@@ -104,7 +104,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						 <a href="<?php echo site_url('home/index');?>">
-						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
+						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.png"/></center>
 						</a>
 					</div>
 				</div>
@@ -139,19 +139,20 @@
 							</div>			
 					</div-->
 						<?php echo form_open('home/search', 'id="form_add"'); ?>
-					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
+
+					<div style=";margin-top:10px;margin-left:55px;margin-right:60px" class="col-md-11"> 
+							<div class="col-md-1 col-block"></div>
+							<div class="col-md-1"></div>
+							<div class="col-md-1"></div>
 						 	<div style="padding-top:10px; margin-top:5px" class="col-md-1 col-block">
 								<center><b>Cari:</b></center>
 							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-2"></div>
-							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-5">	
+							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-4">	
 								<center> 
 									<input type="text" id="keyword" name="keyword" class="form-control" placeholder="Kata Pencarian...">
 								</center>
-							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-							</div>	
-							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-3-block">	
+							</div>		
+							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-1">	
 								<center><input type="submit" class="btn btn-success" value="Cari"></center>
 							</div>	
 					</div>
