@@ -202,15 +202,18 @@
 					</div-->
 						<?php echo form_open('home/search', 'id="form_add"'); ?>
 					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
-						 	<div style="margin-top:5px" class="col-md-1 col-block">
-								<center>Cari:</center>
+						 	<div style="padding-top:10px; margin-top:5px" class="col-md-1 col-block">
+								<center><b>Cari:</b></center>
 							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-5">	
-								<input type="text" id="keyword" name="keyword" class="form-control" placeholder="Kata Pencarian...">
+							<div style="margin-left:10px; margin-right:10px" class="col-md-2"></div>
+							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-5">	
+								<center> 
+									<input type="text" id="keyword" name="keyword" class="form-control" placeholder="Kata Pencarian...">
+								</center>
 							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-1">	
+							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
 							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-3">	
+							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-3-block">	
 								<center><input type="submit" class="btn btn-success" value="Cari"></center>
 							</div>	
 					</div>
