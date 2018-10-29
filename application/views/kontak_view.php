@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Agnes Parcel'n Souvenir | Home</title>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.jpg">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.png">
 
     <!-- Bootstrap Core CSS -->
 	<link href="<?php echo base_url(); ?>include_front/css/bootstrap.css" rel="stylesheet">
@@ -27,7 +27,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                 <li style="background:#FFF0F5; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+                 <li style="background:#f8f8f7; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
@@ -73,7 +73,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						 <a href="<?php echo site_url('home/index');?>">
-						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.jpg"/></center>
+						   <center><img style="padding-bottom:1%;padding-top:1%;" width="300px" src="<?php echo base_url(); ?>include_front/img/test.png"/></center>
 						</a>
 					</div>
 				</div>

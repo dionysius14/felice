@@ -22,9 +22,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     _insert = '<?php echo $this->session->userdata('akses_insert');?>';
                     _edit = '<?php echo $this->session->userdata('akses_edit'); ?>';
                     _delete = '<?php echo $this->session->userdata('akses_delete'); ?>';
+                    _save = '<?php echo $this->session->userdata('save'); ?>';
                     site_url = '<?php echo site_url(); ?>/kategori/data_produk_detail/';
                     base_url = '<?php echo base_url(); ?>/';
                     window.onload = function() {
+						
+					if(_save == 'yes'){
+						form_insert();
+					}
 					// alert(_edit);
 						
 							// $('.loading_gear_gif').show();
@@ -109,6 +114,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $('.loading_gear_gif').show();
                     window.location = site_url;
                     hide_remodal();
+            }
+            function close_remodal_session()
+            {
+					$.ajax({
+									type: "POST",
+											url: "<?php echo site_url('kategori/data_produk_detail/remove_session') ?>",
+											timeout: 20000,
+											data:
+											'datamodel=' + $("#datamodel").val()
+											, success: function(result) {
+											window.location = site_url;
+											hide_remodal();
+											
+											},
+											error: function(html) {
+											alertify.error("Kode Eror [" + html.status + "]<br/><br/>Status:" + html.statusText);
+													$('.loading_gear_gif').hide();
+											}
+
+									});
             }
             function clear_sorting()
             {

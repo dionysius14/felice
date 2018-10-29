@@ -12,6 +12,7 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+     background: #fff url("../img/bg.jpg")  repeat;
 }
 
 
@@ -28,7 +29,7 @@
     margin-left: -250px;
     overflow-y: auto;
      background: #fff url("../img/bunga.png")  repeat-y left bottom;
-	 background-color: #FFF0F5;
+	 background-color: #f8f8f7;
 	  background-attachment: fixed;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -48,6 +49,7 @@
     width: 100%;
     position: absolute;
     padding: 15px;
+		background: #fff url("../img/bg.jpg")  repeat;
 }
 
 #wrapper.toggled #page-content-wrapper {

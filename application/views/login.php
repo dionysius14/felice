@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta charset="utf-8"> 
 				
-		<link rel="SHORTCUT ICON" href="<?php echo base_url(); ?>include_front/img/test.jpg">
+		<link rel="SHORTCUT ICON" href="<?php echo base_url(); ?>include_front/img/test.png">
 		<title><?php echo $this->session->userdata("title"); ?></title>
         <!--?php $this->load->view('common/head'); ?-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>include/css/bootstrap-theme.min.css" media="all">
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $attributes = array('class' => 'form-signin');
                 echo form_open('login', $attributes);
                 ?>
-				<center><img style="margin-bottom:20px" width="70%" id="preview_image" src="<?php echo base_url(); ?>include_front/img/test.jpg">
+				<center><img style="margin-bottom:20px" width="70%" id="preview_image" src="<?php echo base_url(); ?>include_front/img/test.png">
 				<br/>
                 <!--h2 class="form-signin-heading">LOGO SI</h2--></center>
                 <label for="inputEmail" class="sr-only">Email address</label>

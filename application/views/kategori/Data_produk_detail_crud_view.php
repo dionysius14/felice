@@ -25,7 +25,7 @@
             <div class="col-md-12" style="text-align: center">
                 <input type="submit" id="button" name="simpan" value="Upload"  class="btn btn-success" />
                 <?php echo form_close(); ?>  
-                <a type="submit" name="batal" value="Batal" onclick="close_remodal()" class="btn btn-danger" >Batal</a>
+                <a type="submit" name="batal" value="Batal" onclick="close_remodal_session()" class="btn btn-danger" >Kembali</a>
             </div>
         </div> 
     </div>	  

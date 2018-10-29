@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Agnes Parcel'n Souvenir | Home</title>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.jpg">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>include_front/img/test.png">
 
     <!-- Bootstrap Core CSS -->
 	<link href="<?php echo base_url(); ?>include_front/css/bootstrap.css" rel="stylesheet">
@@ -33,7 +33,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-               <li style="background:#FFF0F5; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
+               <li style="background:#f8f8f7; padding-top:0px;padding-bottom:10px;height:80px;" class="sidebar-brand">
                     <a href="<?php echo site_url('home/index');?>">
                        <img style="    margin-left: -71px;margin-top: -51px;"src="<?php echo base_url(); ?>include_front/img/1.png"/>
                     </a>
@@ -113,17 +113,18 @@
 							</div>			
 					</div-->
 						<?php echo form_open('home/search', 'id="form_add"'); ?>
-					<div style="margin-top:10px;margin-left:60px;margin-right:60px" class="col-md-11"> 
-						 	<div style="margin-top:5px" class="col-md-1 col-block">
-								<center>Cari:</center>
-							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-5">	
+					<div style=";margin-top:10px;margin-left:55px;margin-right:60px" class="col-md-11"> 
+							<div class="col-md-1 col-block"></div>
+							<div class="col-md-1"></div>
+							<div class="col-md-1"></div>					
+						 	<div style="padding-top:10px; margin-top:5px" class="col-md-1 col-block">
+								<center><b>Cari:</b></center>
+							</div>		
+							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-4">
 								<input type="text" id="keyword" value="<?php echo $this->session->userdata('keyword') ?>" name="keyword" class="form-control" placeholder="Kata Pencarian...">
 							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-1">	
-							</div>	
-							<div style="margin-left:10px; margin-right:10px" class="col-md-2">	
-								<input type="submit" class="btn btn-success" value="Cari">
+							<div style="padding-top:10px; margin-left:10px; margin-right:10px" class="col-md-1">	
+								<center><input type="submit" class="btn btn-success" value="Cari"></center>
 							</div>	
 					</div>
 					<?php echo form_close(); ?> 

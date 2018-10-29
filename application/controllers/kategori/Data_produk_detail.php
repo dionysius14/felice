@@ -69,7 +69,8 @@ class Data_produk_detail extends CI_Controller {
 						 $this->load->library('upload');
 						$this->upload->initialize($config);
 						if (!$this->upload->do_upload("userfile")) {
-							 echo "Error";
+							 $this->session->set_userdata("save", "yes");
+								redirect('kategori/data_produk_detail/');
 						}else{
 							$datafoto=$this->upload->data();
 							$nm_file = trim(str_replace(" ","",date('dmYHis'))).$datafoto['orig_name'];
@@ -84,6 +85,7 @@ class Data_produk_detail extends CI_Controller {
 							$temp = $this->produk_model->insert_detail($dataData);
 							if ($temp == '1') {
 								$this->session->set_userdata("error", "Simpan Berhasil");
+								$this->session->set_userdata("save", "yes");
 								redirect('kategori/data_produk_detail/');
 							} else
 								echo "insert Gagal";
@@ -125,5 +127,9 @@ class Data_produk_detail extends CI_Controller {
         }
         echo $temp;
     }
+	public function remove_session(){
+		$this->session->unset_userdata("save");
+		echo 1;
+	}
 
 }
