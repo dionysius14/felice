@@ -60,7 +60,8 @@
         <br/>
         <div class="row">
             <div class="col-md-12" style="text-align: center">
-                <input type="submit" id="button" name="simpan" value="Upload"  class="btn btn-success" />
+                <input type="submit" id="button" name="simpan" value="Simpan"  class="btn btn-success" />
+                <input type="submit" id="button" name="simpan_gallery" value="Upload Gallery"  class="btn btn-success" />
                 <?php echo form_close(); ?>  
                 <a type="submit" name="batal" value="Batal" onclick="close_remodal()" class="btn btn-danger" >Batal</a>
             </div>

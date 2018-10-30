@@ -107,7 +107,7 @@ class Data_produk extends CI_Controller {
 			$this->form_validation->set_rules('userfile', 'Foto', 'required');
 		}
         $error = '';
-        if (isset($_POST['simpan'])) {
+        if (isset($_POST['simpan']) || isset($_POST['simpan_gallery'])) {
             if ($this->form_validation->run() == FALSE) {
                 $data['tambah'] = 'tambah';
                 $data['error'] = 'error';
@@ -143,9 +143,19 @@ class Data_produk extends CI_Controller {
 							);
 							$this->lib->log("Tambah");
 							$temp = $this->produk_model->insert($dataData);
+							$id = $this->session->userdata("last_id");
 							if ($temp == '1') {
-								$this->session->set_userdata("error", "Simpan Berhasil");
-								redirect('kategori/data_produk/');
+								 if (isset($_POST['simpan']) && !isset($_POST['simpan_gallery'])) {
+									$this->session->set_userdata("error", "Simpan Berhasil");
+									redirect('kategori/data_produk/');
+										 
+								 }else{
+									$this->session->set_userdata("error", "Simpan Berhasil");
+									$this->session->set_userdata("produk_id", $id);
+									$this->session->set_userdata("save", "yes");
+									redirect('kategori/data_produk_detail/');
+									 
+								 }
 							} else
 								echo "insert Gagal";
 						}    

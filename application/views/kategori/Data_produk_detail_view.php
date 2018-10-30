@@ -175,6 +175,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row" >
                             <div class="col-md-9">
                                 <button type="submit" onclick="form_insert()" class="btn btn-success"><img src="<?php echo base_url(); ?>include/img/add.png" />Tambah Data</button>
+								 <a type="submit" href="<?php echo site_url('kategori/data_produk')?> "class="btn btn-success"><i class="fa fa-fw fa-backward"></i>&nbsp;Ke Data Produk</a>
                             </div>
                             <div class="col-md-2" style="padding-right:30px;">
 							    <input class="form-control" type="search" id="filter_search" ng-model="produk.produk_nama" placeholder="Cari produk..." aria-label="Cari produk" />
