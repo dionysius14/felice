@@ -12,7 +12,7 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-     background: #fff url("../img/bg.jpg")  repeat;
+    background-image: #fff url("../img/bg.png") repeat bottom;
 }
 
 
@@ -28,7 +28,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-     background: #fff url("../img/bunga.png")  repeat-y left bottom;
+     background: #fff url("../img/bg.jpg")  repeat-y left bottom;
 	 background-color: #f8f8f7;
 	  background-attachment: fixed;
     -webkit-transition: all 0.5s ease;
