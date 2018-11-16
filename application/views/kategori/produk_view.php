@@ -140,7 +140,7 @@
 					</div-->
 						<?php echo form_open('home/search', 'id="form_add"'); ?>
 
-					<div style=";margin-top:10px;margin-left:55px;margin-right:60px" class="col-md-11"> 
+					<div style=";margin-top:50px;margin-left:55px;margin-right:60px" class="col-md-11"> 
 							<div class="col-md-1 col-block"></div>
 							<div class="col-md-1"></div>
 							<div class="col-md-1"></div>
@@ -174,7 +174,7 @@
 										<figure>
 											<center>
 											<img 
-													style="width:80%; length:80%; margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:10px;"
+													style="width:80%; length:80%; margin-left:10px; margin-right:10px; margin-top:50px; margin-bottom:10px;"
 													src="<?php echo base_url(); ?>include_front/img/produk/<?php echo $val->produk_foto; ?>" 
 													class="media" 
 													alt=""

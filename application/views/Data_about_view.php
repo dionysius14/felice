@@ -198,18 +198,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-12">
                                 <table ng-table="tableParams"  class="table table-striped ng-table-responsive" export-csv="csv">
                                     <tr ng-repeat="(datamodel, about) in $data | filter:about.about_nama as results" ng-class="{ 'emphasis': about.about_nama == '<?php echo $this->session->userdata("about_nama") ?>'}">
-                                        <td class="col-md-3 borderkanan" data-title="'Link Social '" sortable="'link_fb'">
+                                        <td class="col-md-1 borderkanan" data-title="'Link Social '" sortable="'link_fb'">
 											<b>Facebook : </b><br/>
                                             <span id="link_fb{{$index}}" >{{about.link_fb}}</span><br/>
 											<b>Instagram :</b><br/>
 											<span id="link_ig{{$index}}" >{{about.link_ig}}</span><br/>
-                                        </td> 
-										<td class="col-md-1 borderkanan" data-title="'Telepon'" sortable="'phone'">
-                                            <span id="phone{{$index}}" >{{about.phone}}</span>
-                                        </td> 
-											<td class="col-md-1 borderkanan" data-title="'Latitude/Longitude'" sortable="'latitude'">
-                                            <span id="latitude{{$index}}" ><b>Latitude :</b>{{about.latitude}}</span><br/>
-                                            <span id="latitude{{$index}}" ><b>Longitude :</b>{{about.longitude}}</span>
+											<b>Telepon :</b><br/>
+											<span id="link_ig{{$index}}" >{{about.phone}}</span><br/>
                                         </td> 
 											<td class="col-md-3 borderkanan" data-title="'Alamat'" sortable="'alamat'">
                                             <span id="alamat{{$index}}" >{{about.alamat}}</span>
